@@ -1,0 +1,46 @@
+---
+layout: default
+title: Proyectos
+permalink: /proyectos/
+---
+<section class="pagina">
+  <h1>Proyectos</h1>
+  <p class="entradilla">
+    Diez años entre la dirección de arte y el gobierno del dato. Ordenados por
+    disciplina, porque la secuencia completa importa más que cada pieza suelta.
+  </p>
+</section>
+
+{%- comment -%}
+El orden de las disciplinas se declara aqui, no se deduce: manda la narrativa,
+no el alfabeto. Anadir una disciplina nueva = anadirla a esta lista.
+{%- endcomment -%}
+{%- assign disciplinas = "Datos,Marca,Dirección de arte" | split: "," -%}
+{%- assign ordenados = site.proyectos | sort: "anyo" | reverse -%}
+
+{%- for disciplina in disciplinas %}
+{%- assign delgrupo = ordenados | where: "disciplina", disciplina %}
+{%- if delgrupo.size > 0 %}
+<section class="listado">
+  <h2 class="titulo-seccion">{{ disciplina }}</h2>
+  <ul class="rejilla">
+    {%- for p in delgrupo %}
+    <li class="tarjeta">
+      <a href="{{ p.url | relative_url }}">
+        {%- if p.portada %}
+        <img class="miniatura" src="{{ p.portada | relative_url }}" alt="" loading="lazy">
+        {%- endif %}
+        <p class="meta">{{ p.anyo }}</p>
+        <h3>{{ p.title }}</h3>
+        <p class="extracto">{{ p.resumen }}</p>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif %}
+{%- endfor %}
+
+{%- if site.proyectos.size == 0 %}
+<p class="extracto">Todavía no hay proyectos publicados.</p>
+{%- endif %}

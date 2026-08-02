@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<article class="proyecto">
+  <header class="proyecto-cabecera">
+    <p class="meta">
+      {{ page.disciplina }}{% if page.anyo %} <span class="sep">·</span> {{ page.anyo }}{% endif %}
+    </p>
+    <h1>{{ page.title }}</h1>
+    {%- if page.resumen %}<p class="entradilla">{{ page.resumen }}</p>{% endif %}
+  </header>
+
+  {%- if page.portada %}
+  <figure class="proyecto-portada">
+    <img src="{{ page.portada | relative_url }}" alt="{{ page.portada_alt | default: page.title }}" loading="lazy">
+  </figure>
+  {%- endif %}
+
+  <dl class="ficha">
+    {%- if page.cliente %}<div><dt>Cliente</dt><dd>{{ page.cliente }}</dd></div>{% endif %}
+    {%- if page.rol %}<div><dt>Rol</dt><dd>{{ page.rol }}</dd></div>{% endif %}
+    {%- if page.stack %}<div><dt>Herramientas</dt><dd>{{ page.stack | join: ", " }}</dd></div>{% endif %}
+    {%- if page.resultado %}<div><dt>Resultado</dt><dd>{{ page.resultado }}</dd></div>{% endif %}
+  </dl>
+
+  <div class="prosa">
+    {{ content }}
+  </div>
+
+  {%- if page.enlace %}
+  <p class="enlace-externo"><a href="{{ page.enlace }}">{{ page.enlace_texto | default: "Ver el proyecto" }}</a></p>
+  {%- endif %}
+</article>
+
+<p class="volver"><a href="{{ '/proyectos/' | relative_url }}">Todos los proyectos</a></p>

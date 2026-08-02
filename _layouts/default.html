@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'es' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- comment -%} seo genera title, description, canonical, Open Graph y JSON-LD {%- endcomment -%}
+  {%- seo -%}
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <a class="marca" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav class="nav">
+      <a href="{{ '/proyectos/' | relative_url }}">Proyectos</a>
+      <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      <a href="{{ '/sobre-mi/' | relative_url }}">Sobre mí</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    {{ content }}
+  </main>
+
+  <footer class="pie">
+    <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}</p>
+    <p class="enlaces">
+      {%- if site.linkedin %}<a href="https://www.linkedin.com/in/{{ site.linkedin }}/" rel="me">LinkedIn</a>{% endif -%}
+      {%- if site.github %}<a href="https://github.com/{{ site.github }}" rel="me">GitHub</a>{% endif -%}
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    </p>
+  </footer>
+</body>
+</html>

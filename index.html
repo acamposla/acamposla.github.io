@@ -1,0 +1,47 @@
+---
+layout: default
+---
+<section class="portada">
+  <h1>{{ site.author.name }}</h1>
+  <p class="entradilla">{{ site.description }}</p>
+</section>
+
+{%- assign destacados = site.proyectos | where: "destacado", true | sort: "anyo" | reverse -%}
+{%- if destacados.size > 0 %}
+<section class="listado">
+  <h2 class="titulo-seccion">Trabajo seleccionado</h2>
+  <ul class="rejilla">
+    {%- for p in destacados limit: 4 %}
+    <li class="tarjeta">
+      <a href="{{ p.url | relative_url }}">
+        {%- if p.portada %}
+        <img class="miniatura" src="{{ p.portada | relative_url }}" alt="" loading="lazy">
+        {%- endif %}
+        <p class="meta">{{ p.disciplina }}{% if p.anyo %} <span class="sep">·</span> {{ p.anyo }}{% endif %}</p>
+        <h3>{{ p.title }}</h3>
+        <p class="extracto">{{ p.resumen }}</p>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+  <p><a class="mas" href="{{ '/proyectos/' | relative_url }}">Todos los proyectos</a></p>
+</section>
+{%- endif %}
+
+<section class="listado">
+  <h2 class="titulo-seccion">Últimas entradas</h2>
+  <ul class="entradas">
+    {%- for post in site.posts limit: 4 %}
+    <li>
+      <p class="meta">{% include fecha.html date=post.date %}</p>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p class="extracto">{{ post.resumen | default: post.excerpt | strip_html | truncate: 180 }}</p>
+    </li>
+    {%- else %}
+    <li><p class="extracto">Todavía no hay entradas publicadas.</p></li>
+    {%- endfor %}
+  </ul>
+  {%- if site.posts.size > 4 %}
+  <p><a class="mas" href="{{ '/blog/' | relative_url }}">Ver todas las entradas</a></p>
+  {%- endif %}
+</section>

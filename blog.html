@@ -1,0 +1,26 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+---
+<section class="listado archivo">
+  <h1>Blog</h1>
+
+  {%- assign anteriores = "" -%}
+  <ul class="entradas">
+    {%- for post in site.posts %}
+    {%- assign anyo = post.date | date: "%Y" -%}
+    {%- if anyo != anteriores %}
+    <li class="separador-anyo"><h2>{{ anyo }}</h2></li>
+    {%- assign anteriores = anyo -%}
+    {%- endif %}
+    <li>
+      <p class="meta">{% include fecha.html date=post.date %}</p>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p class="extracto">{{ post.resumen | default: post.excerpt | strip_html | truncate: 180 }}</p>
+    </li>
+    {%- else %}
+    <li><p class="extracto">Todavía no hay entradas publicadas.</p></li>
+    {%- endfor %}
+  </ul>
+</section>

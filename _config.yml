@@ -1,0 +1,64 @@
+# Configuracion del sitio. Cambiar un valor aqui obliga a reiniciar el server local;
+# en GitHub Pages basta con hacer push.
+
+title: "Alejandro Campos Lamas"
+tagline: "Negocio, datos y marca"
+description: >-
+  Notas de trabajo sobre datos aplicados a decisiones de negocio, escritas desde
+  el proceso: margen, surtido, PIM, SAP y lo que el dato enseña cuando toca un P&L.
+author:
+  name: "Alejandro Campos Lamas"
+  email: ""
+
+# url = dominio raiz (sin barra final). baseurl = subcarpeta ("" si el sitio va en la raiz).
+# Al conectar el dominio propio, cambiar url y crear el fichero CNAME.
+url: "https://acamposla.github.io"
+baseurl: ""
+
+lang: es
+timezone: Europe/Madrid
+
+# Enlaces del perfil. Vacio = no se pinta.
+linkedin: "alejandrocamposlamas"
+github: "acamposla"
+
+# /blog/2026/mi-titulo/ — sin dia, para que la URL no envejezca a la vista.
+permalink: /blog/:year/:title/
+
+# Plugins soportados de forma nativa por GitHub Pages (no requieren Actions).
+# Anadir jekyll-paginate solo cuando el archivo pase de ~30 entradas.
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# El portfolio es una coleccion, no entradas de blog: otro tipo de contenido,
+# con sus propios campos y su propia plantilla. Mecanismo nativo de Jekyll.
+collections:
+  proyectos:
+    output: true
+    permalink: /proyectos/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: proyectos
+    values:
+      layout: proyecto
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CLAUDE.md
+  - vendor

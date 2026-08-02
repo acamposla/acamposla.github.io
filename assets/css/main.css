@@ -1,0 +1,357 @@
+/* Sistema minimo: una escala tipografica, dos familias, dos temas.
+   Sin fuentes externas a proposito — cero peticiones de red, cero CLS. */
+
+:root {
+  --serif: "Iowan Old Style", "Charter", Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  --tinta: #16161a;
+  --tinta-suave: #55555f;
+  --fondo: #fbfbf9;
+  --fondo-sutil: #f1f1ec;
+  --linea: #dededa;
+  --acento: #9a3412;
+
+  /* 40rem ~= 70 caracteres por linea: medida de lectura comoda que ademas
+     admite una rejilla de 2 columnas para el portfolio. */
+  --medida: 40rem;
+  --ritmo: 1.7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tinta: #e8e8e4;
+    --tinta-suave: #9d9d99;
+    --fondo: #131316;
+    --fondo-sutil: #1c1c20;
+    --linea: #2c2c32;
+    --acento: #e8a87c;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: var(--ritmo);
+  color: var(--tinta);
+  background: var(--fondo);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a:hover { color: var(--acento); }
+
+/* ---------- Estructura ---------- */
+
+.cabecera, main, .pie {
+  max-width: var(--medida);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-block: 2.5rem 3.5rem;
+}
+
+.marca {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 1.25rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+}
+.nav a { color: var(--tinta-suave); text-decoration: none; }
+.nav a:hover { color: var(--acento); }
+
+.saltar {
+  position: absolute;
+  left: -9999px;
+}
+.saltar:focus {
+  left: 1rem; top: 1rem;
+  position: fixed;
+  z-index: 10;
+  background: var(--fondo);
+  border: 1px solid var(--linea);
+  padding: 0.5rem 0.75rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+}
+
+.pie {
+  margin-top: 6rem;
+  padding-block: 2rem 4rem;
+  border-top: 1px solid var(--linea);
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--tinta-suave);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  justify-content: space-between;
+}
+.pie p { margin: 0; }
+.pie .enlaces { display: flex; gap: 1.25rem; }
+
+/* ---------- Titulares ---------- */
+
+h1, h2, h3 {
+  font-family: var(--sans);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+h1 { font-size: 1.95rem; font-weight: 650; margin: 0 0 0.6rem; }
+h2 { font-size: 1.3rem; font-weight: 600; margin: 3rem 0 0.8rem; }
+h3 { font-size: 1.05rem; font-weight: 600; margin: 2rem 0 0.5rem; }
+
+.portada h1 { font-size: 2.4rem; }
+.portada .entradilla {
+  font-size: 1.2rem;
+  color: var(--tinta-suave);
+  margin: 0 0 1rem;
+  text-wrap: pretty;
+}
+
+.titulo-seccion {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--tinta-suave);
+  margin: 4rem 0 1.5rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--linea);
+}
+
+/* ---------- Listados ---------- */
+
+.entradas { list-style: none; margin: 0; padding: 0; }
+.entradas > li + li { margin-top: 2.75rem; }
+.entradas h3 { margin: 0.15rem 0 0.4rem; font-size: 1.25rem; }
+.entradas h3 a { text-decoration: none; }
+.entradas h3 a:hover { text-decoration: underline; }
+.extracto { margin: 0; color: var(--tinta-suave); text-wrap: pretty; }
+
+.separador-anyo { margin-top: 3.5rem !important; }
+.separador-anyo h2 {
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+  margin: 0;
+}
+
+.meta {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--tinta-suave);
+  margin: 0;
+}
+.meta .sep { margin-inline: 0.4rem; }
+.tag { margin-right: 0.4rem; }
+
+.mas { font-family: var(--sans); font-size: 0.85rem; }
+
+/* ---------- Entrada ---------- */
+
+.entrada-cabecera { margin-bottom: 2.5rem; }
+.entrada-cabecera .entradilla {
+  font-size: 1.15rem;
+  color: var(--tinta-suave);
+  margin: 0.5rem 0 0;
+  text-wrap: pretty;
+}
+
+.prosa > * + * { margin-top: 1.35em; }
+.prosa p { margin: 0; text-wrap: pretty; }
+
+.prosa blockquote {
+  margin: 2rem 0;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--acento);
+  color: var(--tinta-suave);
+  font-style: italic;
+}
+
+.prosa ul, .prosa ol { padding-left: 1.3rem; }
+.prosa li + li { margin-top: 0.4rem; }
+
+.prosa img, .prosa video { max-width: 100%; height: auto; display: block; }
+
+.prosa figure { margin: 2.5rem 0; }
+.prosa figcaption {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--tinta-suave);
+  margin-top: 0.6rem;
+}
+
+.prosa code {
+  font-family: var(--mono);
+  font-size: 0.86em;
+  background: var(--fondo-sutil);
+  padding: 0.12em 0.35em;
+  border-radius: 3px;
+}
+
+.prosa pre {
+  background: var(--fondo-sutil);
+  border: 1px solid var(--linea);
+  border-radius: 5px;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+.prosa pre code { background: none; padding: 0; font-size: inherit; }
+
+/* Las tablas anchas hacen scroll dentro de su caja, nunca la pagina. */
+.prosa table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sans);
+  font-size: 0.88rem;
+}
+.prosa th, .prosa td {
+  text-align: left;
+  padding: 0.55rem 0.7rem;
+  border-bottom: 1px solid var(--linea);
+}
+.prosa th { font-weight: 600; }
+
+.prosa hr {
+  border: 0;
+  border-top: 1px solid var(--linea);
+  margin: 3rem 0;
+}
+
+/* ---------- Navegacion entre entradas ---------- */
+
+.paginacion-entrada {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--linea);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+}
+.paginacion-entrada a {
+  text-decoration: none;
+  max-width: 45%;
+  color: var(--tinta);
+}
+.paginacion-entrada a:hover { color: var(--acento); }
+.paginacion-entrada .siguiente { margin-left: auto; text-align: right; }
+.paginacion-entrada span {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--tinta-suave);
+  margin-bottom: 0.2rem;
+}
+
+/* ---------- Portfolio ---------- */
+
+.rejilla {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 2.5rem 1.75rem;
+}
+
+.tarjeta a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.tarjeta h3 { margin: 0.15rem 0 0.35rem; font-size: 1.1rem; }
+.tarjeta a:hover h3 { color: var(--acento); text-decoration: underline; }
+.tarjeta .extracto { font-size: 0.95rem; }
+
+.miniatura {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  background: var(--fondo-sutil);
+  border: 1px solid var(--linea);
+  border-radius: 3px;
+  margin-bottom: 0.85rem;
+}
+
+.proyecto-cabecera { margin-bottom: 2rem; }
+.proyecto-cabecera .entradilla {
+  font-size: 1.15rem;
+  color: var(--tinta-suave);
+  margin: 0.5rem 0 0;
+  text-wrap: pretty;
+}
+
+.proyecto-portada { margin: 0 0 2.5rem; }
+.proyecto-portada img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--linea);
+  border-radius: 3px;
+}
+
+/* Ficha tecnica del proyecto: etiqueta arriba, valor debajo. */
+.ficha {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 1.25rem 1.75rem;
+  margin: 0 0 2.5rem;
+  padding: 1.25rem 0;
+  border-block: 1px solid var(--linea);
+  font-family: var(--sans);
+}
+.ficha div { min-width: 0; }
+.ficha dt {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--tinta-suave);
+  margin-bottom: 0.2rem;
+}
+.ficha dd { margin: 0; font-size: 0.92rem; line-height: 1.45; }
+
+.enlace-externo, .volver {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  margin-top: 2.5rem;
+}
+.volver { color: var(--tinta-suave); }
+
+@media (max-width: 34rem) {
+  body { font-size: 1.06rem; }
+  .portada h1 { font-size: 2rem; }
+  .cabecera { padding-block: 1.75rem 2.5rem; }
+  .rejilla { gap: 2rem; }
+}

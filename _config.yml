@@ -65,4 +65,5 @@ exclude:
   - Gemfile.lock
   - README.md
   - CLAUDE.md
+  - CONTEXTO_CONVERSACION.md
   - vendor

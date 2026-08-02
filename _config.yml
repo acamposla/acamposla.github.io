@@ -12,8 +12,12 @@ author:
 
 # url = dominio raiz (sin barra final). baseurl = subcarpeta ("" si el sitio va en la raiz).
 # Al conectar el dominio propio, cambiar url y crear el fichero CNAME.
-url: "https://acamposla.github.io"
+url: "https://alejandrocamposlamas.com"
 baseurl: ""
+
+# ANTES DE LANZAR: poner a false (o borrar la linea) para permitir la indexacion.
+# Mientras este a true, el sitio es visible pero los buscadores lo ignoran.
+noindex: true
 
 lang: es
 timezone: Europe/Madrid

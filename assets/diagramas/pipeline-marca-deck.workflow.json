@@ -1,0 +1,212 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "De la web de la marca al deck terminado",
+    "quality_profile": "showcase",
+    "legend": {
+      "mode": "hidden"
+    }
+  },
+  "lanes": [
+    {
+      "id": "entrada",
+      "label": "Material de partida"
+    },
+    {
+      "id": "proceso",
+      "label": "Medición y sistema de marca"
+    },
+    {
+      "id": "control",
+      "label": "Control"
+    },
+    {
+      "id": "produccion",
+      "label": "Producción del deck"
+    }
+  ],
+  "phases": [
+    {
+      "id": "medir",
+      "label": "Medir",
+      "fromCol": 0,
+      "toCol": 1
+    },
+    {
+      "id": "ordenar",
+      "label": "Ordenar la marca",
+      "fromCol": 2,
+      "toCol": 3,
+      "variant": "emphasis"
+    },
+    {
+      "id": "producir",
+      "label": "Producir",
+      "fromCol": 4,
+      "toCol": 5
+    }
+  ],
+  "mainPath": [
+    "web",
+    "navegador",
+    "retrato",
+    "ficha",
+    "generador",
+    "corrector",
+    "entrega"
+  ],
+  "nodes": [
+    {
+      "id": "web",
+      "lane": "entrada",
+      "col": 0,
+      "type": "external",
+      "label": "Web de la marca",
+      "sublabel": "14 páginas públicas",
+      "width": 176
+    },
+    {
+      "id": "muestra",
+      "lane": "entrada",
+      "col": 2,
+      "type": "external",
+      "label": "Muestra del cliente",
+      "sublabel": "cómo debe ser el deck",
+      "width": 176
+    },
+    {
+      "id": "navegador",
+      "lane": "proceso",
+      "col": 1,
+      "type": "backend",
+      "label": "Navegador automatizado",
+      "sublabel": "mide color y tipografía",
+      "tag": "valores reales",
+      "width": 176
+    },
+    {
+      "id": "retrato",
+      "lane": "proceso",
+      "col": 2,
+      "type": "database",
+      "label": "Retrato de marca",
+      "sublabel": "qué hace la web, no el manual",
+      "width": 176
+    },
+    {
+      "id": "ficha",
+      "lane": "proceso",
+      "col": 3,
+      "type": "database",
+      "label": "Ficha de valores",
+      "sublabel": "60 valores con su origen",
+      "tag": "fuente única",
+      "width": 176
+    },
+    {
+      "id": "decision",
+      "lane": "control",
+      "col": 3,
+      "type": "security",
+      "label": "Decisión humana",
+      "sublabel": "qué manda si chocan",
+      "tag": "no se automatiza",
+      "width": 176
+    },
+    {
+      "id": "generador",
+      "lane": "produccion",
+      "col": 4,
+      "type": "backend",
+      "label": "Generador de slides",
+      "sublabel": "monta las 34 solo",
+      "width": 176
+    },
+    {
+      "id": "corrector",
+      "lane": "control",
+      "col": 4,
+      "type": "security",
+      "label": "Corrector de marca",
+      "sublabel": "bloquea lo prohibido",
+      "width": 176
+    },
+    {
+      "id": "entrega",
+      "lane": "produccion",
+      "col": 5,
+      "type": "cloud",
+      "label": "Deck editable y PDF",
+      "sublabel": "más plantilla reutilizable",
+      "width": 176
+    }
+  ],
+  "edges": [
+    {
+      "from": "web",
+      "to": "navegador",
+      "label": "abre cada página"
+    },
+    {
+      "from": "navegador",
+      "to": "retrato",
+      "label": "valores medidos",
+      "variant": "emphasis"
+    },
+    {
+      "from": "retrato",
+      "to": "ficha"
+    },
+    {
+      "from": "muestra",
+      "to": "ficha",
+      "label": "manda en el deck",
+      "role": "branch",
+      "variant": "dashed"
+    },
+    {
+      "from": "decision",
+      "to": "ficha",
+      "label": "se escribe, no se supone",
+      "variant": "security",
+      "role": "branch"
+    },
+    {
+      "from": "ficha",
+      "to": "generador",
+      "label": "ningún color a mano",
+      "variant": "emphasis"
+    },
+    {
+      "from": "generador",
+      "to": "corrector",
+      "label": "revisión",
+      "variant": "security"
+    },
+    {
+      "from": "corrector",
+      "to": "entrega",
+      "label": "aprobado",
+      "variant": "emphasis"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Lo que cambia para marketing",
+      "items": [
+        "El color y la tipografía salen medidos de la web, no copiados a ojo",
+        "Cambias un valor en la ficha y las 34 slides se rehacen solas"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Lo que sigue siendo humano",
+      "items": [
+        "La muestra del cliente y su web se contradecían en el azul y en la tipografía",
+        "Elegir cuál manda es criterio, y se escribe antes de producir"
+      ]
+    }
+  ]
+}

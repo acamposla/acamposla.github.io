@@ -75,6 +75,14 @@ solo lectura. Nunca al revés: allí suele haber otra sesión trabajando.
 (código reproducible) · 4. **Qué decidí y qué me costó** · 5. Qué me llevo (el
 método, transferible).
 
+**Cuándo aplica esta estructura** (matizado 2026-09-22): a las entradas que salen
+de la cantera de `analitica-comercial`, donde el análisis es el contenido y el
+bloque 4 es lo único que separa la entrada de un tutorial. **No a toda entrada.**
+Una entrada de método o de proceso puede llevar el criterio repartido por el
+cuerpo y cerrar en "Qué me llevo", sin bloque 4. Caso resuelto así:
+`2026-09-22-de-que-color-es-una-marca`, donde además el material del bloque 4 era
+de un cliente sin aprobación y no podía publicarse.
+
 El bloque 4 **siempre lo escribe Alejandro**. Los otros cuatro los puede montar
 cualquiera con el material delante; el 4 es la entrada entera. En el borrador se
 deja vacío con la materia prima ya decidida anotada dentro, para que no parta de

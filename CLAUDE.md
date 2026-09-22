@@ -106,6 +106,21 @@ comentarios de andamiaje, sin nombres de terceros y sin notas de criterio.
 **Antes de commitear cualquier fichero nuevo, la pregunta es la misma que para un
 post: ¿esto lo puede leer cualquiera?**
 
+## Vista previa en local (2026-09-22)
+
+La pila que funciona es **Ruby 3.1**, no la del sistema ni la ultima:
+
+```bash
+export PATH="/opt/homebrew/opt/ruby@3.1/bin:$PATH"
+bundle exec jekyll serve --drafts
+```
+
+Por que 3.1 y no otra: el Ruby del sistema es 2.6 y las gemas piden 3.0+; con
+Ruby 4 falla `liquid` 4.0.3 (la version que fija github-pages) porque usa
+`tainted?`, eliminado en Ruby 3.2. El `Gemfile` lleva `csv`, `base64`,
+`bigdecimal` y `logger` porque jekyll 3.9 las pide y Ruby 3.4 las saco de la
+libreria estandar; solo afectan al local.
+
 ## Restricciones técnicas
 
 - Solo plugins de la lista blanca de GitHub Pages (`jekyll-feed`,

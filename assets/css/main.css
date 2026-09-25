@@ -355,3 +355,34 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 2rem 0 0.5rem; }
   .cabecera { padding-block: 1.75rem 2.5rem; }
   .rejilla { gap: 2rem; }
 }
+
+/* Diagrama interactivo en SVG propio (entrada "Antes de la skill").
+   Usa las variables del sitio, así que el modo oscuro sale solo. */
+.prosa .diagrama svg { width: 100%; height: auto; display: block; font-family: var(--sans); }
+.dg-nodo { cursor: pointer; outline: none; }
+.dg-nodo rect { fill: var(--fondo-sutil); stroke: var(--linea); stroke-width: 1.2; transition: stroke 0.15s, opacity 0.15s; }
+.dg-nodo.control rect { stroke: var(--acento); }
+.dg-nodo text { fill: var(--tinta); }
+.dg-nodo .carril { font-size: 9.5px; letter-spacing: 0.08em; fill: var(--tinta-suave); }
+.dg-nodo .titulo { font-size: 15px; font-weight: 600; }
+.dg-nodo .sub { font-size: 12px; fill: var(--tinta-suave); }
+.dg-arista path { fill: none; stroke: var(--tinta-suave); stroke-width: 1.4; transition: stroke 0.15s, opacity 0.15s; }
+.dg-arista polygon { fill: var(--tinta-suave); }
+.dg-arista text { font-size: 11.5px; fill: var(--tinta-suave); }
+.dg-arista.memoria path { stroke-dasharray: 4 4; }
+.dg-arista.fallo path { stroke: var(--acento); stroke-dasharray: 4 4; }
+.dg-arista.fallo polygon, .dg-arista.fallo text { fill: var(--acento); }
+.diagrama .dg-nodo, .diagrama .dg-arista { transition: opacity 0.15s; }
+.diagrama.activo .dg-nodo:not(.on), .diagrama.activo .dg-arista:not(.on) { opacity: 0.22; }
+.diagrama .dg-arista.on path { stroke: var(--acento); stroke-width: 2; }
+.diagrama .dg-arista.on polygon, .diagrama .dg-arista.on text { fill: var(--acento); }
+.dg-nodo.actual rect, .dg-nodo:focus-visible rect { stroke: var(--acento); stroke-width: 2; }
+.dg-detalle {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--tinta-suave);
+  min-height: 2.9em;
+  margin: 0.6rem 0 0;
+  padding-left: 0.8rem;
+  border-left: 2px solid var(--acento);
+}

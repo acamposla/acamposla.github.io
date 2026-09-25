@@ -1,0 +1,67 @@
+<!-- Generado por scripts/diagramas/encargo-a-skill.py. No editar a mano. -->
+<figure class="diagrama" id="diagrama-encargo">
+<svg viewBox="0 0 640 480" role="img" aria-labelledby="dg-titulo dg-desc">
+<title id="dg-titulo">Del encargo a la skill</title>
+<desc id="dg-desc">Tu encargo pasa a un plan de Claude; Claude genera en Higgsfield vía MCP; un control de calidad devuelve a generar si falla y entrega el resultado si pasa. Al cerrar sesión lo aprendido va a aprendizajes.md, que cuando se repite se convierte en una skill que Claude carga en el siguiente plan.</desc>
+<g class="dg-arista" data-desde="encargo" data-hasta="plan"><path d="M180 80 V108"/><polygon points="180,111 175,103 185,103"/></g>
+<g class="dg-arista" data-desde="plan" data-hasta="generar"><path d="M180 175 V203"/><polygon points="180,206 175,198 185,198"/><text x="190" y="195" text-anchor="start">vía MCP</text></g>
+<g class="dg-arista" data-desde="generar" data-hasta="calidad"><path d="M180 270 V298"/><polygon points="180,301 175,293 185,293"/></g>
+<g class="dg-arista fallo" data-desde="calidad" data-hasta="generar"><path d="M60 333 H38 V238 H57"/><polygon points="60,238 52,233 52,243"/><text x="30" y="286" text-anchor="middle" transform="rotate(-90 30 286)">no pasa</text></g>
+<g class="dg-arista" data-desde="calidad" data-hasta="resultado"><path d="M180 365 V393"/><polygon points="180,396 175,388 185,388"/><text x="190" y="385" text-anchor="start">pasa</text></g>
+<g class="dg-arista memoria" data-desde="resultado" data-hasta="aprendizajes"><path d="M300 428 H387"/><polygon points="390,428 382,423 382,433"/><text x="345" y="420" text-anchor="middle">al cerrar sesión</text></g>
+<g class="dg-arista memoria" data-desde="aprendizajes" data-hasta="skill"><path d="M500 396 V178"/><polygon points="500,175 495,183 505,183"/><text x="510" y="290" text-anchor="start">cuando se repite</text></g>
+<g class="dg-arista memoria" data-desde="skill" data-hasta="plan"><path d="M390 143 H303"/><polygon points="300,143 308,138 308,148"/><text x="345" y="135" text-anchor="middle">se carga sola</text></g>
+<g class="dg-nodo" data-id="encargo" tabindex="0" role="button" aria-label="Encargo"><rect x="60" y="16" width="240" height="64" rx="8"/><text class="carril" x="180.0" y="34" text-anchor="middle">TÚ</text><text class="titulo" x="180.0" y="54" text-anchor="middle">Encargo</text><text class="sub" x="180.0" y="70" text-anchor="middle">dictado + referencias</text></g>
+<g class="dg-nodo" data-id="plan" tabindex="0" role="button" aria-label="Plan"><rect x="60" y="111" width="240" height="64" rx="8"/><text class="carril" x="180.0" y="129" text-anchor="middle">CLAUDE</text><text class="titulo" x="180.0" y="149" text-anchor="middle">Plan</text><text class="sub" x="180.0" y="165" text-anchor="middle">qué modelo y por qué</text></g>
+<g class="dg-nodo" data-id="generar" tabindex="0" role="button" aria-label="Generar"><rect x="60" y="206" width="240" height="64" rx="8"/><text class="carril" x="180.0" y="224" text-anchor="middle">HIGGSFIELD VÍA MCP</text><text class="titulo" x="180.0" y="244" text-anchor="middle">Generar</text><text class="sub" x="180.0" y="260" text-anchor="middle">función generate</text></g>
+<g class="dg-nodo control" data-id="calidad" tabindex="0" role="button" aria-label="Control de calidad"><rect x="60" y="301" width="240" height="64" rx="8"/><text class="carril" x="180.0" y="319" text-anchor="middle">CLAUDE</text><text class="titulo" x="180.0" y="339" text-anchor="middle">Control de calidad</text><text class="sub" x="180.0" y="355" text-anchor="middle">¿es el mismo producto?</text></g>
+<g class="dg-nodo" data-id="resultado" tabindex="0" role="button" aria-label="Resultado"><rect x="60" y="396" width="240" height="64" rx="8"/><text class="carril" x="180.0" y="414" text-anchor="middle">TÚ</text><text class="titulo" x="180.0" y="434" text-anchor="middle">Resultado</text><text class="sub" x="180.0" y="450" text-anchor="middle">borrador y luego alta</text></g>
+<g class="dg-nodo" data-id="aprendizajes" tabindex="0" role="button" aria-label="aprendizajes.md"><rect x="390" y="396" width="220" height="64" rx="8"/><text class="carril" x="500.0" y="414" text-anchor="middle">MEMORIA DEL PROYECTO</text><text class="titulo" x="500.0" y="434" text-anchor="middle">aprendizajes.md</text><text class="sub" x="500.0" y="450" text-anchor="middle">qué funcionó y qué no</text></g>
+<g class="dg-nodo" data-id="skill" tabindex="0" role="button" aria-label="Skill"><rect x="390" y="111" width="220" height="64" rx="8"/><text class="carril" x="500.0" y="129" text-anchor="middle">MEMORIA DEL PROYECTO</text><text class="titulo" x="500.0" y="149" text-anchor="middle">Skill</text><text class="sub" x="500.0" y="165" text-anchor="middle">reglas que se repiten</text></g>
+</svg>
+<p class="dg-detalle" aria-live="polite">Pasa el ratón o toca un paso para ver qué ocurre en él.</p>
+</figure>
+<script>
+(function () {
+  var fig = document.getElementById('diagrama-encargo');
+  if (!fig) return;
+  var detalle = fig.querySelector('.dg-detalle');
+  var porDefecto = detalle.textContent;
+  var textos = {
+    encargo: "Lo dictas por voz, con las fotos de referencia y tus condiciones: qué modelo, borrador barato primero y que explique lo que hace.",
+    plan: "Claude elige modelo y parámetros. Pedirle que razone la elección le obliga a comparar antes de lanzar.",
+    generar: "Claude rellena los parámetros de la función de Higgsfield a través del MCP. Solo puede usar las funciones que el conector expone.",
+    calidad: "Antes de enseñarte nada, Claude revisa el resultado contra tus reglas. Si las dos tomas no muestran el mismo producto, lo vuelve a pedir.",
+    resultado: "Te llega el borrador en baja calidad. Con tu visto bueno, la versión en alta.",
+    aprendizajes: "Al cerrar la sesión, Claude apunta en un fichero del proyecto qué funcionó y qué no.",
+    skill: "Cuando esas reglas se repiten de un proyecto a otro, se empaquetan en una skill que Claude carga sola si el encargo se parece."
+  };
+  var nodos = fig.querySelectorAll('.dg-nodo');
+  var aristas = fig.querySelectorAll('.dg-arista');
+  var fijo = null;
+  function activar(id) {
+    fig.classList.toggle('activo', !!id);
+    var vecinos = {};
+    vecinos[id] = true;
+    aristas.forEach(function (a) {
+      var on = a.dataset.desde === id || a.dataset.hasta === id;
+      a.classList.toggle('on', on);
+      if (on) { vecinos[a.dataset.desde] = true; vecinos[a.dataset.hasta] = true; }
+    });
+    nodos.forEach(function (n) {
+      n.classList.toggle('on', !!id && vecinos[n.dataset.id]);
+      n.classList.toggle('actual', n.dataset.id === id);
+    });
+    detalle.textContent = id ? textos[id] : porDefecto;
+  }
+  nodos.forEach(function (n) {
+    n.addEventListener('mouseenter', function () { if (!fijo) activar(n.dataset.id); });
+    n.addEventListener('mouseleave', function () { if (!fijo) activar(null); });
+    n.addEventListener('focus', function () { activar(n.dataset.id); });
+    n.addEventListener('click', function () {
+      fijo = fijo === n.dataset.id ? null : n.dataset.id;
+      activar(fijo);
+    });
+  });
+})();
+</script>

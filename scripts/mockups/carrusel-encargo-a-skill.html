@@ -1,0 +1,131 @@
+<!doctype html>
+<!--
+  Carrusel vertical de LinkedIn (1080x1350) para la entrada "Antes de la skill".
+  Reutiliza los mockups de encargo-a-skill.html ya exportados a assets/img.
+  Se exporta con render-carrusel.mjs: un PNG por slide y un PDF con todas.
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<style>
+  :root {
+    --serif: "Iowan Old Style", Charter, Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --tinta: #16161a; --suave: #55555f; --fondo: #fbfbf9; --sutil: #f1f1ec; --linea: #dededa; --acento: #9a3412;
+  }
+  @page { size: 1080px 1350px; margin: 0; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #ccc; }
+  .slide {
+    width: 1080px; height: 1350px; background: var(--fondo); color: var(--tinta);
+    padding: 96px 88px 80px; display: flex; flex-direction: column; position: relative;
+    page-break-after: always; overflow: hidden;
+  }
+  .num { font-family: var(--sans); font-size: 22px; color: var(--suave); letter-spacing: 0.06em; }
+  .num b { color: var(--acento); font-weight: 600; }
+  h1 { font-family: var(--serif); font-weight: 600; font-size: 84px; line-height: 1.06; letter-spacing: -1px; margin-top: 56px; }
+  h2 { font-family: var(--serif); font-weight: 600; font-size: 60px; line-height: 1.1; letter-spacing: -0.5px; margin-top: 40px; }
+  p.bajada { font-family: var(--serif); font-size: 34px; line-height: 1.4; color: var(--suave); margin-top: 28px; }
+  .img { margin-top: auto; margin-bottom: auto; padding-top: 40px; }
+  .img img { width: 100%; display: block; border-radius: 18px; box-shadow: 0 18px 50px rgba(22, 22, 26, 0.16); }
+  .rec { font-family: var(--sans); font-size: 19px; color: var(--suave); margin-top: 16px; }
+  .pie { margin-top: auto; display: flex; justify-content: space-between; align-items: baseline;
+         font-family: var(--sans); font-size: 22px; color: var(--suave); border-top: 1px solid var(--linea); padding-top: 26px; }
+  .pie b { color: var(--tinta); font-weight: 600; }
+  .grande { font-family: var(--serif); font-size: 44px; line-height: 1.38; margin-top: 44px; }
+  .grande em { font-style: normal; color: var(--acento); }
+  ol.preguntas { list-style: none; padding: 0; margin-top: 48px; counter-reset: q; }
+  ol.preguntas li { counter-increment: q; font-family: var(--serif); font-size: 40px; line-height: 1.3;
+                    padding: 30px 0 30px 86px; border-top: 1px solid var(--linea); position: relative; }
+  ol.preguntas li::before { content: counter(q); position: absolute; left: 0; top: 26px; font-family: var(--sans);
+                            font-size: 44px; font-weight: 600; color: var(--acento); }
+  .portada { background: var(--tinta); color: var(--fondo); }
+  .portada .num { color: #9d9d99; }
+  .portada h1 { font-size: 100px; margin-top: auto; }
+  .portada p.bajada { color: #c9c9c4; }
+  .portada .pie { border-color: #2c2c32; color: #9d9d99; margin-top: 120px; }
+  .portada .pie b { color: var(--fondo); }
+  .flecha { color: #e8a87c; }
+  .skill { margin-top: 44px; background: #1e1f22; color: #d4d4d4; border-radius: 18px; padding: 34px 38px;
+           font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 25px; line-height: 1.55; white-space: pre-wrap;
+           box-shadow: 0 18px 50px rgba(22, 22, 26, 0.16); }
+  .skill .g { color: #7d7e83; } .skill .n { color: #d97757; } .skill .k { color: #e8a87c; }
+</style>
+</head>
+<body>
+
+<section class="slide portada">
+  <div class="num">IA APLICADA · CASO PRÁCTICO</div>
+  <h1>Dos packshots del mismo producto. Dos etiquetas distintas.</h1>
+  <p class="bajada">Cómo hacer que Claude revise su trabajo antes de enseñártelo, y cómo se convierte eso en una skill para tu equipo de marca.</p>
+  <div class="pie"><b>Alejandro Campos Lamas</b><span class="flecha">desliza →</span></div>
+</section>
+
+<section class="slide">
+  <div class="num"><b>01</b> / 07</div>
+  <h2>El encargo, dictado y con condiciones</h2>
+  <p class="bajada">Dos packshots de la botella para la campaña, de frente y en tres cuartos. Antes de generar, qué modelo y por qué. Primero un borrador barato.</p>
+  <div class="img"><img src="../../assets/img/encargo-a-skill/dictado.webp" alt=""><div class="rec">Recreación de la pantalla</div></div>
+</section>
+
+<section class="slide">
+  <div class="num"><b>02</b> / 07</div>
+  <h2>Claude maneja Higgsfield por MCP</h2>
+  <p class="bajada">Higgsfield reúne modelos de imagen y vídeo de varios fabricantes. Con su MCP, Claude elige modelo y rellena los controles que tú tocarías a mano.</p>
+  <div class="img"><img src="../../assets/img/encargo-a-skill/permiso.webp" alt=""><div class="rec">Recreación de la pantalla</div></div>
+</section>
+
+<section class="slide">
+  <div class="num"><b>03</b> / 07</div>
+  <h2>Salen bonitos. Y con una etiqueta distinta en cada foto.</h2>
+  <div class="img"><img src="../../assets/img/encargo-a-skill/borradores.webp" alt=""><div class="rec">Recreación esquemática · marca inventada</div></div>
+</section>
+
+<section class="slide">
+  <div class="num"><b>04</b> / 07</div>
+  <h2>Falta un control de calidad</h2>
+  <p class="grande">Cada modelo del agregador falla a su manera, y el modelo lo elige Claude. Sin control, cada fallo lo descubres y lo corriges tú.</p>
+  <p class="grande">Como con un becario: si el proveedor le da una chapuza, quieres que la <em>revise y la devuelva</em> antes de traértela.</p>
+  <p class="grande" style="color: var(--suave); font-size: 36px;">La regla cabe en una línea: si pides varias tomas del mismo producto, tiene que ser el mismo producto. Y el logo no se genera: se compone con el archivo real.</p>
+</section>
+
+<section class="slide">
+  <div class="num"><b>05</b> / 07</div>
+  <h2>Antes de la skill, un fichero</h2>
+  <p class="bajada">Cada sesión deja reglas en aprendizajes.md. Las que aguantan varios encargos pasan a una skill, con la redacción exacta que funcionó.</p>
+  <div class="img"><img src="../../assets/img/encargo-a-skill/aprendizajes.webp" alt=""><div class="rec">Recreación de la pantalla</div></div>
+</section>
+
+<section class="slide">
+  <div class="num"><b>06</b> / 07</div>
+  <h2>La skill: las reglas que sobrevivieron</h2>
+  <div class="skill"><span class="g">---</span>
+<span class="k">name:</span> packshots-de-marca
+<span class="k">description:</span> Packshots de producto con
+  Higgsfield, para campaña o web.
+<span class="g">---</span>
+<span class="n">1.</span> Di qué modelo vas a usar y por qué.
+<span class="n">2.</span> Borrador en baja. Alta con visto bueno.
+<span class="n">3.</span> El logo se compone con el archivo
+   real de /marca.
+<span class="n">4.</span> Antes de entregar: misma etiqueta,
+   mismo logo y mismos colores en todas
+   las tomas. Si falla, retoca la zona y
+   vuelve a comprobar.
+<span class="n">5.</span> Al cerrar, apunta lo aprendido.</div>
+</section>
+
+<section class="slide">
+  <div class="num"><b>07</b> / 07</div>
+  <h2>Cuatro preguntas antes de pedirle nada a una herramienta conectada</h2>
+  <ol class="preguntas">
+    <li>¿Qué funciones tienes y cuáles te faltan?</li>
+    <li>¿Qué modelo vas a usar y por qué?</li>
+    <li>¿Qué vas a comprobar antes de enseñarme el resultado?</li>
+    <li>¿Qué hemos aprendido hoy?</li>
+  </ol>
+  <div class="pie"><b>Alejandro Campos Lamas</b><span>datos, marca e IA aplicada</span></div>
+</section>
+
+</body>
+</html>

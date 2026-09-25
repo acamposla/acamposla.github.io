@@ -1,0 +1,189 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Del encargo a la skill",
+    "quality_profile": "showcase",
+    "legend": {
+      "mode": "hidden"
+    }
+  },
+  "lanes": [
+    {
+      "id": "tu",
+      "label": "Tú"
+    },
+    {
+      "id": "claude",
+      "label": "Claude"
+    },
+    {
+      "id": "herramienta",
+      "label": "Higgsfield vía MCP"
+    },
+    {
+      "id": "memoria",
+      "label": "Memoria del proyecto"
+    }
+  ],
+  "phases": [
+    {
+      "id": "pedir",
+      "label": "Pedir",
+      "fromCol": 0,
+      "toCol": 1
+    },
+    {
+      "id": "producir",
+      "label": "Producir y revisar",
+      "fromCol": 2,
+      "toCol": 3,
+      "variant": "emphasis"
+    },
+    {
+      "id": "aprender",
+      "label": "Aprender",
+      "fromCol": 4,
+      "toCol": 5,
+      "variant": "dashed"
+    }
+  ],
+  "mainPath": [
+    "encargo",
+    "plan",
+    "generar",
+    "calidad",
+    "resultado",
+    "aprendizajes",
+    "skill"
+  ],
+  "nodes": [
+    {
+      "id": "encargo",
+      "lane": "tu",
+      "col": 0,
+      "type": "external",
+      "label": "Encargo",
+      "sublabel": "dictado + referencias",
+      "width": 150
+    },
+    {
+      "id": "plan",
+      "lane": "claude",
+      "col": 1,
+      "type": "backend",
+      "label": "Plan",
+      "sublabel": "qué modelo y por qué",
+      "width": 150
+    },
+    {
+      "id": "generar",
+      "lane": "herramienta",
+      "col": 2,
+      "type": "cloud",
+      "label": "Generar",
+      "sublabel": "función generate",
+      "width": 150
+    },
+    {
+      "id": "calidad",
+      "lane": "claude",
+      "col": 3,
+      "type": "security",
+      "label": "Control de calidad",
+      "sublabel": "¿mismo objeto?",
+      "width": 160
+    },
+    {
+      "id": "resultado",
+      "lane": "tu",
+      "col": 4,
+      "type": "frontend",
+      "label": "Resultado",
+      "sublabel": "borrador y luego alta",
+      "width": 150
+    },
+    {
+      "id": "aprendizajes",
+      "lane": "memoria",
+      "col": 4,
+      "type": "database",
+      "label": "aprendizajes.md",
+      "sublabel": "qué funcionó y qué no",
+      "width": 160
+    },
+    {
+      "id": "skill",
+      "lane": "memoria",
+      "col": 5,
+      "type": "database",
+      "label": "Skill",
+      "sublabel": "reglas que se repiten",
+      "width": 150
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "from": "encargo",
+      "to": "plan",
+      "fromSide": "right",
+      "toSide": "top"
+    },
+    {
+      "id": "e2",
+      "from": "plan",
+      "to": "generar",
+      "label": "vía MCP",
+      "variant": "emphasis",
+      "fromSide": "bottom",
+      "toSide": "left"
+    },
+    {
+      "id": "e3",
+      "from": "generar",
+      "to": "calidad",
+      "fromSide": "right",
+      "toSide": "bottom"
+    },
+    {
+      "id": "e4",
+      "from": "calidad",
+      "to": "generar",
+      "label": "no pasa",
+      "variant": "security",
+      "role": "error",
+      "fromSide": "left",
+      "toSide": "top"
+    },
+    {
+      "id": "e5",
+      "from": "calidad",
+      "to": "resultado",
+      "label": "pasa",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e6",
+      "from": "resultado",
+      "to": "aprendizajes",
+      "label": "al cerrar sesión",
+      "variant": "dashed"
+    },
+    {
+      "id": "e7",
+      "from": "aprendizajes",
+      "to": "skill",
+      "label": "cuando se repite",
+      "variant": "dashed"
+    },
+    {
+      "id": "e8",
+      "from": "skill",
+      "to": "plan",
+      "label": "se carga sola",
+      "variant": "dashed",
+      "role": "return"
+    }
+  ]
+}

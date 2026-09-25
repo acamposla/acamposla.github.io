@@ -2,10 +2,11 @@
 # en GitHub Pages basta con hacer push.
 
 title: "Alejandro Campos Lamas"
-tagline: "Negocio, datos y marca"
+tagline: "Insights, marca y datos"
 description: >-
-  Notas de trabajo sobre datos aplicados a decisiones de negocio, escritas desde
-  el proceso: margen, surtido, PIM, SAP y lo que el dato enseña cuando toca un P&L.
+  Diez años preguntando por qué la gente compra lo que compra, primero en
+  creatividad publicitaria y después al frente de una marca de gran consumo.
+  Aquí escribo desde el proceso: insights, marca, datos e IA aplicada.
 author:
   name: "Alejandro Campos Lamas"
   email: ""
@@ -41,7 +42,7 @@ plugins:
 collections:
   proyectos:
     output: true
-    permalink: /proyectos/:name/
+    permalink: /portfolio/:name/
 
 defaults:
   - scope:
@@ -66,4 +67,5 @@ exclude:
   - README.md
   - CLAUDE.md
   - CONTEXTO_CONVERSACION.md
+  - scripts
   - vendor

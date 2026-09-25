@@ -3,25 +3,26 @@ title: Sobre mí
 permalink: /sobre-mi/
 ---
 
-{% comment %}
-BORRADOR: redactado a partir de la nota Identidad_Vertice_Conector_Bilingue del
-vault. Revísalo antes de publicar — es tu voz, no la mía. Este bloque no llega
-al HTML final.
-{% endcomment %}
+Llevo diez años con la misma pregunta: por qué la gente compra lo que compra.
+Los cinco primeros la hice desde la creatividad publicitaria, como director de
+arte en agencias de Londres y Madrid. Los cinco siguientes, al frente de una
+marca de gran consumo, donde pasé del insight creativo al insight científico.
 
-Cinco años de dirección de arte en agencias de Londres y Madrid. Cinco más como
-Brand & Marketing Lead en distribución de gran consumo, con responsabilidad de
-margen y de lanzamientos. Después, la capa analítica: bootcamp de datos, máster
-en Business Intelligence, y el trabajo real de gobernar el dato de producto
-—SAP, PIM, ETL, BI— dentro de una empresa familiar.
+En esa marca llevé la facturación de 8 a 12&nbsp;M€ con un equipo de 12 personas, y
+monté yo la función de insights. Encargamos a un instituto externo un estudio
+para validar un packaging, y lo que encontró fue que la marca no tenía propuesta
+de valor. Llevé a dirección ese hallazgo en lugar del que habíamos pedido, y
+marcó la agenda de los dos años siguientes.
 
-Lo que me interesa no es el dato ni la creatividad por separado, sino el punto
-donde uno tiene que explicarse ante la otra: el insight que sostiene un brief,
-el P&L que decide un surtido, la vista materializada que existe porque alguien
-entendió que un EAN tiene sustitutivos.
+Trabajé con panel de GfK, Helium10, unas 20.000 reseñas (nuestras y de la
+competencia) y una encuesta propia. Con eso partí el buyer persona en dos
+cohortes y abrí una categoría nueva que llegó al 10&nbsp;% de la facturación. El proceso quedó escrito en un framework de
+siete fases. Por debajo, SQL y Oracle, Python, Power BI y un pipeline que lleva
+9.300 referencias de SAP al PIM.
 
-Aquí escribo desde el proceso, no desde la cátedra. Lo que estoy construyendo y
-lo que los datos me han enseñado por el camino.
+Ahora cofundo Sapioverse y llevo marca y estrategia en Vertienza. Vivo en Madrid
+y estoy abierto a reubicación. En este blog escribo desde el proceso: lo que
+estoy construyendo y lo que los datos me enseñan por el camino.
 
 ## Dónde encontrarme
 

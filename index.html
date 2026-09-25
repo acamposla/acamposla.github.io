@@ -24,7 +24,7 @@ layout: default
     </li>
     {%- endfor %}
   </ul>
-  <p><a class="mas" href="{{ '/proyectos/' | relative_url }}">Todos los proyectos</a></p>
+  <p><a class="mas" href="{{ '/portfolio/' | relative_url }}">Todo el portfolio</a></p>
 </section>
 {%- endif %}
 
@@ -32,11 +32,7 @@ layout: default
   <h2 class="titulo-seccion">Últimas entradas</h2>
   <ul class="entradas">
     {%- for post in site.posts limit: 4 %}
-    <li>
-      <p class="meta">{% include fecha.html date=post.date %}</p>
-      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-      <p class="extracto">{{ post.resumen | default: post.excerpt | strip_html | truncate: 180 }}</p>
-    </li>
+    {% include entrada-listado.html post=post %}
     {%- else %}
     <li><p class="extracto">Todavía no hay entradas publicadas.</p></li>
     {%- endfor %}

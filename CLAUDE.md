@@ -10,11 +10,11 @@ developer con portfolio activo).
 ## Dos tipos de contenido
 
 - `_posts/` → blog, cronológico, `/blog/:year/:title/`.
-- `_proyectos/` → colección de portfolio, atemporal, `/proyectos/:name/`, con
+- `_proyectos/` → colección de portfolio, atemporal, `/portfolio/:name/`, con
   ficha técnica (cliente, rol, stack, resultado) y agrupada por `disciplina`.
 
 El portfolio se ordena por **disciplina en orden narrativo** (Datos → Marca →
-Dirección de arte), declarado a mano en `proyectos.html`. No es cosmético: según
+Dirección de arte), declarado a mano en `portfolio.html`. No es cosmético: según
 la nota de identidad del vault, lo escaso no es cada pieza suelta sino la
 secuencia completa creativo premiado → dueño del margen → gobierno del dato.
 Romper ese orden rompe el argumento.

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- Lienzos de 1200x630 para las previews del blog. Cada <section id> es una
+     imagen; render-previews.mjs las exporta a PNG (og:image) y WebP (listado). -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  body { background: #fff; }
+  section { width: 1200px; height: 630px; overflow: hidden; }
+
+  /* De que color es una marca: la misma slide con dos fichas de valores. */
+  #de-que-color-es-una-marca {
+    background: #e7e5df;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    gap: 24px;
+    padding: 0 48px;
+  }
+  #de-que-color-es-una-marca img {
+    width: 100%;
+    display: block;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / .08), 0 8px 24px rgb(0 0 0 / .10);
+  }
+</style>
+</head>
+<body>
+<section id="de-que-color-es-una-marca">
+  <img src="../../assets/img/slide-vertienza.png" alt="">
+  <img src="../../assets/img/slide-sapioverse.png" alt="">
+</section>
+</body>
+</html>

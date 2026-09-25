@@ -14,11 +14,7 @@ permalink: /blog/
     <li class="separador-anyo"><h2>{{ anyo }}</h2></li>
     {%- assign anteriores = anyo -%}
     {%- endif %}
-    <li>
-      <p class="meta">{% include fecha.html date=post.date %}</p>
-      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-      <p class="extracto">{{ post.resumen | default: post.excerpt | strip_html | truncate: 180 }}</p>
-    </li>
+    {% include entrada-listado.html post=post %}
     {%- else %}
     <li><p class="extracto">Todavía no hay entradas publicadas.</p></li>
     {%- endfor %}

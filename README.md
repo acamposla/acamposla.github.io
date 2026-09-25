@@ -6,7 +6,7 @@ Dos tipos de contenido distintos, cada uno con su plantilla:
 
 - **Entradas** (`_posts/`) — cronológicas, con fecha en la URL. Van a `/blog/`.
 - **Proyectos** (`_proyectos/`) — colección atemporal con ficha técnica
-  (cliente, rol, herramientas, resultado). Van a `/proyectos/`.
+  (cliente, rol, herramientas, resultado). Van a `/portfolio/`.
 
 ## Publicar un proyecto
 
@@ -28,9 +28,13 @@ portada_alt: "Descripción para lectores de pantalla"
 ---
 ```
 
-`disciplina` debe coincidir con una de las declaradas en `proyectos.html`, o el
+`disciplina` debe coincidir con una de las declaradas en `portfolio.html`, o el
 proyecto no aparece en el listado. El orden de las disciplinas se declara ahí a
 mano: manda la narrativa, no el alfabeto.
+
+Mientras `_proyectos/` no tenga ninguna ficha, `/portfolio/` muestra el estado
+"en preparación": la entradilla y las piezas de `_data/portfolio_proximamente.yml`.
+Con la primera ficha vuelve sola a la rejilla por disciplina.
 
 ## Publicar una entrada
 
@@ -41,8 +45,17 @@ mano: manda la narrativa, no el alfabeto.
    title: "Titular"
    resumen: "Una frase para el listado y la entradilla."
    tags: [datos, margen]
+   image:                    # preview: og:image al compartir (LinkedIn) y miniatura
+     path: /assets/img/previews/slug.png   # PNG o JPG 1200x630, LinkedIn no lee bien WebP
+     width: 1200
+     height: 630
+     alt: "Qué se ve en la imagen"
+   miniatura: /assets/img/previews/slug.webp  # opcional, versión ligera para el listado
    ---
    ```
+   Sin `image` ni `miniatura` la entrada se lista solo con texto. Las previews
+   se generan con `scripts/previews/render-previews.mjs` (lienzos en
+   `scripts/previews/previews.html`).
 3. `git add . && git commit -m "post: titular" && git push`
 
 GitHub construye el sitio solo. Sin Actions, sin build local, sin dependencias.
@@ -55,14 +68,15 @@ Borradores: `_drafts/nombre-sin-fecha.md`. No se publican.
 ```
 _config.yml     Configuración del sitio (título, URL, colecciones, plugins)
 _layouts/       default (esqueleto) · post · proyecto · page
-_includes/      fecha.html — formatea fechas en español
+_includes/      fecha.html (fechas en español) · entrada-listado.html (entrada con miniatura)
+_data/          portfolio_proximamente.yml (piezas en preparación)
 _posts/         Entradas publicadas
 _drafts/        Entradas sin publicar
 _proyectos/     Fichas de portfolio
 assets/css/     main.css — todo el diseño, un solo fichero
 assets/img/     Imágenes de proyectos
 index.html      Portada: bio + trabajo destacado + últimas entradas
-proyectos.html  Portfolio agrupado por disciplina
+portfolio.html  Portfolio: en preparación o agrupado por disciplina
 blog.html       Archivo del blog agrupado por año
 sobre-mi.md     Página de perfil
 ```

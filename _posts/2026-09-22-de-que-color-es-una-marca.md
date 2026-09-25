@@ -2,6 +2,12 @@
 title: "De qué color es una marca, según su propia web"
 resumen: "Tenía que rehacer un deck de 34 slides respetando la marca de un cliente. En vez de sacar los colores a ojo del manual, abrí su web con un navegador automatizado y conté lo que pinta de verdad. Aparecieron valores que nadie había decidido."
 tags: [marca, proceso, playwright]
+image:
+  path: /assets/img/previews/de-que-color-es-una-marca.png
+  width: 1200
+  height: 630
+  alt: "La misma slide pintada con dos fichas de valores de marca distintas"
+miniatura: /assets/img/previews/de-que-color-es-una-marca.webp
 ---
 
 Tenía que rehacer un deck de 34 slides para una marca de gran consumo. Los

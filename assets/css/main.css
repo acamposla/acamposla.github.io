@@ -173,6 +173,36 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 2rem 0 0.5rem; }
 
 .mas { font-family: var(--sans); font-size: 0.85rem; }
 
+/* Miniatura de entrada: mismo encuadre que el og:image (1200x630). Apilada en
+   movil, a la izquierda del texto en cuanto hay ancho. */
+.entradas .miniatura { height: auto; aspect-ratio: 40 / 21; margin-bottom: 0.75rem; }
+.miniatura-enlace { display: block; }
+.miniatura-enlace:hover .miniatura { border-color: var(--tinta-suave); }
+@media (min-width: 36rem) {
+  .entradas .con-miniatura {
+    display: grid;
+    grid-template-columns: 11rem minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+  .entradas .con-miniatura .miniatura { margin: 0.3rem 0 0; }
+}
+
+/* Portfolio en preparacion: lista numerada, sin enlaces. */
+.proximamente { list-style: none; margin: 0; padding: 0; counter-reset: pieza; }
+.proximamente > li { counter-increment: pieza; position: relative; padding-left: 2.25rem; }
+.proximamente > li + li { margin-top: 2.25rem; }
+.proximamente > li::before {
+  content: counter(pieza, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0.05rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--acento);
+}
+.proximamente h3 { margin: 0.15rem 0 0.4rem; font-size: 1.2rem; }
+
 /* ---------- Entrada ---------- */
 
 .entrada-cabecera { margin-bottom: 2.5rem; }
@@ -183,8 +213,10 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 2rem 0 0.5rem; }
   text-wrap: pretty;
 }
 
+/* :where() deja el parrafo en especificidad 0,1,0: si no, su margin: 0 anula el
+   ritmo vertical de * + * y los parrafos salen pegados. */
+.prosa :where(p) { margin: 0; text-wrap: pretty; }
 .prosa > * + * { margin-top: 1.35em; }
-.prosa p { margin: 0; text-wrap: pretty; }
 
 .prosa blockquote {
   margin: 2rem 0;

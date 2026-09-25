@@ -1,0 +1,19 @@
+{%- comment -%}
+Una entrada en un listado (blog y portada). La miniatura sale de `miniatura`
+(WebP ligero) o, si no hay, de `image.path` (el PNG de og:image). Sin ninguna
+de las dos, la entrada se pinta solo con texto.
+{%- endcomment -%}
+{%- assign post = include.post -%}
+{%- assign mini = post.miniatura | default: post.image.path -%}
+<li{% if mini %} class="con-miniatura"{% endif %}>
+  {%- if mini %}
+  <a class="miniatura-enlace" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
+    <img class="miniatura" src="{{ mini | relative_url }}" alt="" width="1200" height="630" loading="lazy">
+  </a>
+  {%- endif %}
+  <div>
+    <p class="meta">{% include fecha.html date=post.date %}</p>
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    <p class="extracto">{{ post.resumen | default: post.excerpt | strip_html | truncate: 180 }}</p>
+  </div>
+</li>

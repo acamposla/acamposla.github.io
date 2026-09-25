@@ -1,0 +1,13 @@
+# Piezas en preparacion. Solo se pintan mientras _proyectos/ este vacio: con la
+# primera ficha publicada, /portfolio/ vuelve a la rejilla por disciplina.
+- titulo: "La categoría que no existía"
+  disciplinas: "Marca · Datos"
+  resumen: "Cómo crucé datos de panel, de marketplace, reseñas de compradores y ventas propias para abrir una categoría de producto que el lineal español todavía no tenía, y que acabó pesando el 10&nbsp;% de la facturación de la marca."
+
+- titulo: "Un RAG que sabe decir \"no lo sé\""
+  disciplinas: "Datos"
+  resumen: "El banco de pruebas que monté para evaluar un asistente de IA antes de desplegarlo, después de verlo inventarse precios con toda la seguridad del mundo."
+
+- titulo: "De 9.300 referencias de SAP a una ficha de producto"
+  disciplinas: "Datos"
+  resumen: "La arquitectura de un proceso que lleva el catálogo desde SAP hasta la ficha que publican las tiendas, y lo que más costó: poner por escrito reglas de negocio que solo estaban en la cabeza de la gente."

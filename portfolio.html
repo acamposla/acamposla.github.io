@@ -1,10 +1,39 @@
 ---
 layout: default
-title: Proyectos
-permalink: /proyectos/
+title: Portfolio
+permalink: /portfolio/
 ---
+{%- comment -%}
+Dos estados. Mientras no haya fichas en _proyectos/, "proximamente": entradilla
+y lista de piezas en preparacion (_data/portfolio_proximamente.yml). Con la
+primera ficha, la rejilla por disciplina, sin tocar nada aqui.
+{%- endcomment -%}
+{%- if site.proyectos.size == 0 %}
 <section class="pagina">
-  <h1>Proyectos</h1>
+  <h1>Portfolio</h1>
+  <p class="entradilla">
+    Estoy pasando a limpio proyectos que ya hice y que hasta ahora vivían en
+    repositorios privados, notas y presentaciones internas. Cada pieza cuenta
+    qué había que decidir, cómo lo resolví y qué salió torcido por el camino.
+    Las iré publicando de una en una, según las termine.
+  </p>
+</section>
+
+<section class="listado">
+  <h2 class="titulo-seccion">En preparación</h2>
+  <ol class="proximamente">
+    {%- for pieza in site.data.portfolio_proximamente %}
+    <li>
+      <p class="meta">{{ pieza.disciplinas }}</p>
+      <h3>{{ pieza.titulo }}</h3>
+      <p class="extracto">{{ pieza.resumen }}</p>
+    </li>
+    {%- endfor %}
+  </ol>
+</section>
+{%- else %}
+<section class="pagina">
+  <h1>Portfolio</h1>
   <p class="entradilla">
     Diez años entre la dirección de arte y el gobierno del dato. Ordenados por
     disciplina, porque la secuencia completa importa más que cada pieza suelta.
@@ -40,7 +69,4 @@ no el alfabeto. Anadir una disciplina nueva = anadirla a esta lista.
 </section>
 {%- endif %}
 {%- endfor %}
-
-{%- if site.proyectos.size == 0 %}
-<p class="extracto">Todavía no hay proyectos publicados.</p>
 {%- endif %}

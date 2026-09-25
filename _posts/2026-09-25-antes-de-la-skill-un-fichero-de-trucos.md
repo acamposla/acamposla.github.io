@@ -2,6 +2,12 @@
 title: "Antes de la skill, un fichero de trucos"
 resumen: "Claude conectado por MCP a Higgsfield, un agregador de modelos de imagen y vídeo. Pides dos packshots del mismo producto y salen dos etiquetas distintas. Cómo meter un control de calidad e iterar hasta tener tu propia skill."
 tags: [ia, proceso, skills]
+image:
+  path: /assets/img/previews/antes-de-la-skill.png
+  width: 1200
+  height: 630
+  alt: "Dos borradores del mismo envase: la etiqueta dice OLMO en uno y OMLO en el otro"
+miniatura: /assets/img/previews/antes-de-la-skill.webp
 ---
 
 Un amigo lleva un par de semanas usando Claude y me pidió una llamada para

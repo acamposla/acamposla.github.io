@@ -1,35 +1,33 @@
 # Estado de la conversacion
 
-Ultima sesion: 2026-08-03 (madrugada). Estado volatil — el criterio estable vive
-en `CLAUDE.md`, no aqui.
+Ultima sesion: 2026-09-25. Estado volatil: el criterio estable vive en
+`CLAUDE.md`, no aqui.
 
 ## Donde quedo
 
-El sitio esta **en linea y funcionando**: https://alejandrocamposlamas.com
+Publicado hoy (commit `6233033`, verificado en vivo):
 
-Cadena verificada de punta a punta en una sesion:
-
-| Pieza | Estado |
-|---|---|
-| Dominio | Registrado en Cloudflare Registrar (a coste, auto-renovacion activa) |
-| DNS | 4 A del apex a GitHub Pages + `www` CNAME, los 5 **sin proxy** |
-| Repo | `acamposla/acamposla.github.io`, publico, rama `main` |
-| Pages | Activo, build `built` sin errores |
-| Certificado | Aprobado, *Enforce HTTPS* activado |
-| Redirecciones | `http://` → `https://` y `www` → apex, ambas 301 |
-| Indexacion | **Bloqueada** por `noindex: true` |
+- **Previews del blog.** Cada entrada lleva `image` (PNG 1200x630, og:image) y
+  `miniatura` (WebP). Blog y portada las pintan via `_includes/entrada-listado.html`.
+  Las dos entradas reales ya tienen la suya.
+- **Portfolio** en `/portfolio/` (antes `/proyectos/`, que ahora da 404). Con
+  `_proyectos/` vacio muestra "En preparacion" con tres piezas de
+  `_data/portfolio_proximamente.yml`.
+- **Alineacion con LinkedIn**: tagline, description y `sobre-mi.md` reescritos
+  desde el "Acerca de" publicado. Borrador aprobado.
+- **Andamiaje borrado**: la entrada y la ficha de ejemplo.
+- **Bug de `.prosa`** arreglado: los parrafos de toda la prosa salian pegados.
+- `scripts/` fuera del sitio generado.
 
 ## Lo siguiente, por orden
 
-1. **Contenido real.** Borrar `_posts/2026-08-02-ejemplo-*` y
-   `_proyectos/ejemplo-*`, y reescribir `sobre-mi.md` — ese borrador lo redacto
-   Claude desde la nota de identidad del vault, la voz tiene que ser de Alejandro.
-2. **Quitar `noindex: true`** de `_config.yml` el dia del lanzamiento real. Hasta
-   entonces el sitio es visible pero ningun buscador lo toca.
-3. **Verificar el dominio en GitHub** (Settings → Pages → Verified domains).
-   Devuelve un registro TXT que se puede meter en Cloudflare por API con el token
-   `claude` de 1Password. Impide que alguien reclame el dominio si el repo se
-   desconfigura.
+1. **Primera ficha real de portfolio.** Al crear el primer `_proyectos/*.md`,
+   `/portfolio/` vuelve sola a la rejilla por disciplina; quitar esa pieza de
+   `_data/portfolio_proximamente.yml`.
+2. **Nombre visible en LinkedIn** ("Alejandro Campos" frente a "Alejandro Campos
+   Lamas" en la web): lo cambia Alejandro en LinkedIn. En la web no se toca.
+3. **`noindex: true` sigue activo a proposito.** Quitarlo el dia del lanzamiento.
+4. **Verificar el dominio en GitHub** (Settings, Pages, Verified domains).
 
 ## Trampas que ya costaron tiempo
 
@@ -41,10 +39,11 @@ Cadena verificada de punta a punta en una sesion:
 - **Orden al conectar el dominio.** El fichero `CNAME` se crea DESPUES de que el
   DNS resuelva. Al reves, GitHub redirige el `.github.io` al dominio nuevo y el
   sitio queda caido hasta que propague.
-- **No hay Jekyll en local.** El Ruby del sistema es el 2.6 y no vale para el gem
-  `github-pages`; no hay Docker. El build real solo se comprueba al hacer push
-  (`gh api repos/acamposla/acamposla.github.io/pages/builds/latest`). Si se quiere
-  previsualizar en local, `brew install ruby` — instrucciones en el README.
+- **Estado del build de Pages:** `gh api repos/acamposla/acamposla.github.io/pages/builds/latest`.
+  Local con Ruby 3.1, ver `CLAUDE.md`.
+- **Playwright desde `scripts/`:** los `.mjs` son ESM y no respetan `NODE_PATH`.
+  Para `render-previews.mjs`, symlink temporal `node_modules` a
+  `~/dotfiles/claude/skills/brand-assets/scripts/node_modules`, ejecutar y borrar.
 
 ## Fuera de alcance de este repo
 

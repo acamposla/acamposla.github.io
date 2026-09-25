@@ -121,6 +121,17 @@ Ruby 4 falla `liquid` 4.0.3 (la version que fija github-pages) porque usa
 `bigdecimal` y `logger` porque jekyll 3.9 las pide y Ruby 3.4 las saco de la
 libreria estandar; solo afectan al local.
 
+## Previews y portfolio (2026-09-25)
+
+- Cada entrada nueva lleva `image` (PNG o JPG 1200x630, es el og:image que lee
+  LinkedIn, que no lee bien WebP) y `miniatura` (WebP ligero para el listado).
+  Campos documentados en el README; se generan con `scripts/previews/`.
+- `/portfolio/` tiene dos estados: "En preparacion" mientras `_proyectos/` este
+  vacio, rejilla por disciplina desde la primera ficha. Las piezas anunciadas
+  viven en `_data/portfolio_proximamente.yml`.
+- Las cifras del sitio siguen a LinkedIn: lo que ya esta publicado alli (9.300
+  referencias, 8 a 12 M€, 10 %) puede ir aqui; lo que no, no.
+
 ## Restricciones técnicas
 
 - Solo plugins de la lista blanca de GitHub Pages (`jekyll-feed`,

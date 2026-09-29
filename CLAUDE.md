@@ -35,7 +35,7 @@ trayectoria directiva sin ese recorrido suena impostado.
 
 Territorio: el cruce negocio ↔ datos ↔ creatividad. Margen, surtido, sell-in/
 sell-out, PIM, SAP, BI, y el criterio que se saca de operarlos. Detalle del
-posicionamiento en `cerebro-digital/2_Areas/Negocio/Identidad_Vertice_Conector_Bilingue.md`.
+posicionamiento en `cerebro-digital/Comun/Vertienza/Identidad_Vertice_Conector_Bilingue.md`.
 
 **Este blog NO es el de Vertienza ni el de Sapioverse.** Marca personal, primera
 persona. Si una idea es corporativa, va a la web de su vehículo, no aquí.

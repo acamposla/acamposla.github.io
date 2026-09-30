@@ -8,7 +8,8 @@ Los cinco primeros la hice desde la creatividad publicitaria, como director de
 arte en agencias de Londres y Madrid. Los cinco siguientes, al frente de una
 marca de gran consumo, donde pasé del insight creativo al insight científico.
 
-En esa marca llevé la facturación de 8 a 12&nbsp;M€ con un equipo de 12 personas, y
+En esa marca llevé la facturación de 8 a 12&nbsp;M€ dirigiendo un equipo de 12 personas, ocho
+a mi cargo directo, y
 monté yo la función de insights. Encargamos a un instituto externo un estudio
 para validar un packaging, y lo que encontró fue que la marca no tenía propuesta
 de valor. Llevé a dirección ese hallazgo en lugar del que habíamos pedido, y

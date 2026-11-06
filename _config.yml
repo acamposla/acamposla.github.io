@@ -21,6 +21,11 @@ baseurl: ""
 noindex: false
 
 lang: es
+
+# Comillas rectas en todo el sitio: kramdown convierte por defecto "asi" en
+# comillas curvas, y la norma de escritura pide rectas (2026-11-06).
+kramdown:
+  smart_quotes: ["apos", "apos", "quot", "quot"]
 timezone: Europe/Madrid
 
 # Enlaces del perfil. Vacio = no se pinta.

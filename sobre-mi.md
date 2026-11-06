@@ -3,10 +3,11 @@ title: Sobre mí
 permalink: /sobre-mi/
 ---
 
-Llevo diez años con la misma pregunta: por qué la gente compra lo que compra.
-Los cinco primeros la hice desde la creatividad publicitaria, como director de
-arte en agencias de Londres y Madrid. Los cinco siguientes, al frente de una
-marca de gran consumo, donde pasé del insight creativo al insight científico.
+Llevo doce años con la misma pregunta: por qué la gente compra lo que compra.
+Los cuatro primeros la hice desde la creatividad publicitaria, como director de
+arte en agencias de Londres y Madrid. Los siete siguientes, en un distribuidor
+de gran consumo y casi todos al frente de una de sus marcas, donde pasé del
+insight creativo al insight científico.
 
 En esa marca llevé la facturación de 8 a 12&nbsp;M€ dirigiendo un equipo de 11 personas, ocho
 a mi cargo directo, y

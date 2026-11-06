@@ -10,7 +10,7 @@ layout: default
     {%- if page.resumen %}<p class="entradilla">{{ page.resumen }}</p>{% endif %}
   </header>
 
-  {%- if page.portada %}
+  {%- if page.portada and page.portada_en_ficha != false %}
   <figure class="proyecto-portada">
     <img src="{{ page.portada | relative_url }}" alt="{{ page.portada_alt | default: page.title }}" loading="lazy">
   </figure>

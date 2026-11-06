@@ -5,8 +5,9 @@ permalink: /portfolio/
 ---
 {%- comment -%}
 Dos estados. Mientras no haya fichas en _proyectos/, "proximamente": entradilla
-y lista de piezas en preparacion (_data/portfolio_proximamente.yml). Con la
-primera ficha, la rejilla por disciplina, sin tocar nada aqui.
+y lista de piezas en preparacion (_data/portfolio_proximamente.yml). Con fichas,
+la rejilla por disciplina y, debajo, las piezas que sigan en preparacion
+(desde el 2026-11-06). Al publicar una pieza anunciada, quitarla del .yml.
 {%- endcomment -%}
 {%- if site.proyectos.size == 0 %}
 <section class="pagina">
@@ -69,4 +70,19 @@ no el alfabeto. Anadir una disciplina nueva = anadirla a esta lista.
 </section>
 {%- endif %}
 {%- endfor %}
+
+{%- if site.data.portfolio_proximamente.size > 0 %}
+<section class="listado">
+  <h2 class="titulo-seccion">En preparación</h2>
+  <ol class="proximamente">
+    {%- for pieza in site.data.portfolio_proximamente %}
+    <li>
+      <p class="meta">{{ pieza.disciplinas }}</p>
+      <h3>{{ pieza.titulo }}</h3>
+      <p class="extracto">{{ pieza.resumen }}</p>
+    </li>
+    {%- endfor %}
+  </ol>
+</section>
+{%- endif %}
 {%- endif %}

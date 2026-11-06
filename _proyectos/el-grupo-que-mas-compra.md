@@ -17,7 +17,7 @@ image:
 
 ## El problema
 
-En [Garza](https://garza.es/), la marca de electrónica de consumo de
+En [Garza](https://garza.es/), la marca propia de iluminación, conectividad e IoT de
 [Imprex](https://imprex.es/), todos los clientes B2B recibían la misma
 promoción comercial. Nadie sabía cuánto margen costaba cada punto de descuento,
 ni en qué clientes ese margen no sobraba. Lo que decía la intuición de

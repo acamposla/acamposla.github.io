@@ -4,8 +4,10 @@ resumen: "Un distribuidor daba la misma promoción a todos sus clientes B2B sin 
 disciplina: Datos
 anyo: 2026
 rol: "TFM del máster de Business Intelligence de UNIR, con Leticia del Pino"
-stack: [Python, R, Power BI]
+stack: [SQL, Python, Power BI]
 resultado: "Techo de descuento por grupo de clientes, reglas de una frase para ventas y un simulador de promociones"
+enlace: https://github.com/acamposla/promociones-b2b
+enlace_texto: "El código, con datos sintéticos, en GitHub"
 portada: /assets/img/previews/promociones-b2b.webp
 portada_en_ficha: false
 image:
@@ -59,8 +61,9 @@ el descuento sin crecer.
 
 ![Techo de descuento frente a peso en el volumen por segmento, datos sintéticos](/assets/img/promociones-b2b/techo-frente-a-volumen.webp)
 
-*Datos sintéticos e ilustrativos: conservan el orden entre segmentos del caso
-real, las cifras no son reales.*
+*Datos sintéticos, generados con el código del
+[repositorio del caso](https://github.com/acamposla/promociones-b2b): conservan el orden entre
+segmentos del caso real, no sus cifras.*
 
 Commodity, el grupo que más volumen sumaba, era el que tenía el techo de
 descuento más bajo. Con la misma promoción para todos, se perdía dinero justo
@@ -70,7 +73,10 @@ bastante más, quedaba margen sin usar.
 Entregamos el análisis y un simulador en Power BI con tres deslizadores:
 descuento, aceptación y crecimiento exigido. Al moverlos se ve el neto de la
 promoción en cada grupo, cuánto queda hasta el techo y qué parte de los
-clientes deja menos margen del que se le descuenta.
+clientes deja menos margen del que se le descuenta. El de Power BI lleva los
+datos reales dentro, así que aquí va rehecho sobre los datos sintéticos:
+
+{% include simulador-rappel.html %}
 
 Las promociones las decidía yo, y antes de salir de la empresa empecé a usar
 el techo de cada grupo como referencia al diseñarlas. Lo fui metiendo poco a
@@ -123,7 +129,8 @@ todos lo paga él.
   Calinski-Harabász tres, sin un codo claro en la inercia. Elegimos k=4 por
   criterio comercial.
 - **Reglas:** árbol de decisión de profundidad 3 entrenado sobre las etiquetas
-  de K-Means. Reproduce el grupo en el 87 % de los clientes. Es una medida
+  de K-Means. Reproduce el grupo en el 87 % de los clientes del caso real (en
+  los datos sintéticos del repositorio, el 93 %). Es una medida
   descriptiva y no valida el clustering, porque el árbol aprende de las mismas
   variables que formaron los grupos.
 - **Rentabilidad del rappel**, para un grupo:
@@ -137,6 +144,9 @@ todos lo paga él.
   neto es cero sea cual sea r: la tasa de respuesta decide cuánto se gana, y el
   descuento decide si se gana. Por eso el techo se calcula sin datos de
   campañas.
-- **Herramientas:** Python y R para el análisis, Power BI para el simulador.
+- **Herramientas:** SQL y Python para el análisis, Power BI para el simulador.
+- **Código:** [acamposla/promociones-b2b](https://github.com/acamposla/promociones-b2b), con
+  un generador de facturas sintéticas, la tabla de clientes en SQL, el notebook del caso
+  ejecutado, el simulador y dieciséis tests. Se instala y se ejecuta en unos minutos.
 
 </details>

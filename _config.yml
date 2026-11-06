@@ -16,9 +16,9 @@ author:
 url: "https://alejandrocamposlamas.com"
 baseurl: ""
 
-# ANTES DE LANZAR: poner a false (o borrar la linea) para permitir la indexacion.
-# Mientras este a true, el sitio es visible pero los buscadores lo ignoran.
-noindex: true
+# Indexacion abierta desde el 2026-11-06 (primera pieza del portfolio publicada).
+# true = el sitio es visible pero los buscadores lo ignoran.
+noindex: false
 
 lang: es
 timezone: Europe/Madrid

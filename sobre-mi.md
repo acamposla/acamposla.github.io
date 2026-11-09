@@ -36,7 +36,7 @@ estoy construyendo y lo que los datos me enseñan por el camino.
 
 **[2019 - 2026] Imprex Europe, distribución de gran consumo**
 
-- [2020 - 2026] Al frente de [Garza](https://garza.es/), la marca propia de iluminación, conectividad e IoT de Imprex, en España y Portugal. Margen, precio, surtido y lanzamientos; de 8 a 12&nbsp;M€ de facturación, con un equipo de 11 personas y ocho a mi cargo directo. Abrí la categoría de iluminación solar e implanté el PIM, Power BI, Freshdesk y Shopify desde el lado del negocio. El caso de las promociones B2B está en el [portfolio](/portfolio/el-grupo-que-mas-compra/).
+- [2020 - 2026] Al frente de [Garza](https://garza.es/), la marca propia de iluminación, conectividad e IoT de Imprex, en España y Portugal. Margen, precio, surtido y lanzamientos; de 8 a 12&nbsp;M€ de facturación, con un equipo de 11 personas y ocho a mi cargo directo. Abrí la categoría de iluminación solar e implanté el PIM, Power BI, Freshdesk y Shopify desde el lado del negocio. En el portfolio están los casos del [catálogo de SAP al PIM](/portfolio/de-9300-referencias-de-sap-a-una-ficha-de-producto/) y de las [promociones B2B](/portfolio/el-grupo-que-mas-compra/).
 - [2019 - 2020] Amazon y e-commerce de Edgewell, cuyas marcas distribuía Imprex. Lancé el canal de venta directa en Amazon (3P) para la marca en España y Europa.
 
 **[2014 - 2018] Dirección de arte en agencias, Londres y Madrid**

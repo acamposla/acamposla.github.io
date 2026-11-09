@@ -119,6 +119,9 @@ Antes de diseñar una promoción, calcula el techo de descuento de cada grupo de
 clientes: si el que más compra tiene el techo más bajo, el descuento igual para
 todos lo paga él.
 
+[Descarga la presentación del caso en PDF](/assets/docs/caso-promociones-b2b.pdf) (siete
+diapositivas, cifras sintéticas).
+
 <details markdown="1">
 <summary>Cómo se hizo, para quien quiera el detalle técnico</summary>
 

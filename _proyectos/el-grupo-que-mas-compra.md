@@ -3,7 +3,7 @@ title: "El grupo que más compra es el que menos descuento aguanta"
 resumen: "Un distribuidor daba la misma promoción a todos sus clientes B2B sin saber cuánto margen le costaba cada uno. Segmentamos la cartera, calculamos el techo de descuento de cada grupo y el que más volumen movía era el que menos aguantaba."
 disciplina: Datos
 anyo: 2026
-rol: "TFM del máster de Business Intelligence de UNIR, con Leticia del Pino"
+rol: "Al frente de Garza, en Imprex"
 stack: [SQL, Python, Power BI]
 resultado: "Techo de descuento por grupo de clientes, reglas de una frase para ventas y un simulador de promociones"
 enlace: https://github.com/acamposla/promociones-b2b
@@ -26,9 +26,8 @@ ni en qué clientes ese margen no sobraba. Lo que decía la intuición de
 cualquier comercial era que los clientes grandes, como compran más, aguantan
 más descuento.
 
-Lo trabajé como TFM del máster de Business Intelligence de UNIR, con Leticia
-del Pino. La pregunta era práctica: a quién se le puede descontar, cuánto y a
-cambio de qué.
+La pregunta era práctica: a quién se le puede descontar, cuánto y a cambio de
+qué.
 
 ## Qué hicimos
 

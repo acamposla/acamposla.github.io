@@ -119,7 +119,7 @@ clientes: si el que más compra tiene el techo más bajo, el descuento igual par
 todos lo paga él.
 
 [Descarga la presentación del caso en PDF](/assets/docs/caso-promociones-b2b.pdf) (siete
-diapositivas, cifras sintéticas).
+diapositivas, cifras sintéticas; también [en inglés](/assets/docs/b2b-promotions-case.pdf)).
 
 <details markdown="1">
 <summary>Cómo se hizo, para quien quiera el detalle técnico</summary>

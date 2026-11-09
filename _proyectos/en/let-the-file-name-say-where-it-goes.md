@@ -1,11 +1,11 @@
 ---
 title: "Let the file name say where it goes"
-resumen: "A manager for product photos and videos built on the PIM we already had, with no extra licence. Whoever produces a file names it with a formula, and the name says which record and which field it belongs to. I designed it and tested it; it didn't reach production. Rebuilt on a synthetic catalogue, with the code."
+resumen: "A manager for product photos and videos built on the PIM we already had, with no extra licence. Whoever produces a file names it with a formula, and the name says which record and which field it belongs to. It was used in-house, and the InDesign catalogues pulled their images from it. Rebuilt on a synthetic catalogue, with the code."
 disciplina: Brand
 anyo: 2026
 rol: "Head of Garza and PIM owner, at Imprex"
 stack: [Python, Sales Layer]
-resultado: "Naming convention, PIM fields, video protocol and name parser built and tested; the automatic upload didn't reach production"
+resultado: "The naming convention was used in-house: each file landed in its PIM field on its own, and the InDesign catalogues pulled it through the connector"
 enlace: https://github.com/acamposla/dam-por-nombre
 enlace_texto: "The method rewritten on a synthetic catalogue, on GitHub"
 portada: /assets/img/previews/dam-en.webp
@@ -33,7 +33,8 @@ lifestyle shot) that nobody was going to rename.
 
 **The file name as data.** Every file follows the formula `IDENTIFIER_CODE_SERIES`:
 `ORION_VSET_01.mp4` is the first setup video for the Orion model. Whoever produces the file only
-has to name it properly. A script reads the name and puts the file in place.
+has to name it properly. The name is enough to put the file in place, without anyone opening the
+record.
 
 ![The name ORION_VSET_01.mp4 split into identifier, code and series](/assets/img/dam/en/anatomia.webp)
 
@@ -77,9 +78,8 @@ These were done:
 - the video protocol with its scripts;
 - the name parser, with 26 tests.
 
-What was missing was the connection to the Sales Layer API, which is what uploads the file. It was
-waiting on credentials and documentation, and the system didn't reach production before I left
-Imprex.
+The formula was used in-house. Each file landed in its PIM field on its own, and the InDesign
+catalogues pulled it from there through the connector, with nobody hunting for the photo by hand.
 
 I've rewritten the method on an invented catalogue of eight models, their variants and five themes.
 I ran a synthetic agency delivery through it, with the usual mistakes: one-digit series, made-up

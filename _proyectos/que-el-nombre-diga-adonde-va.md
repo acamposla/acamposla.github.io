@@ -1,11 +1,11 @@
 ---
 title: "Que el nombre del archivo diga adónde va"
-resumen: "Un gestor de fotos y vídeos de producto montado sobre el PIM que ya teníamos, sin pagar otra licencia. Quien produce el archivo lo nombra con una fórmula, y el nombre dice a qué ficha y a qué campo va. Lo diseñé y lo dejé probado, pero no llegó a producción. Rehecho sobre un catálogo sintético, con el código."
+resumen: "Un gestor de fotos y vídeos de producto montado sobre el PIM que ya teníamos, sin pagar otra licencia. Quien produce el archivo lo nombra con una fórmula, y el nombre dice a qué ficha y a qué campo va. Se usó en interno, y de ahí sacaban las imágenes los catálogos de InDesign. Rehecho sobre un catálogo sintético, con el código."
 disciplina: Marca
 anyo: 2026
 rol: "Al frente de Garza y responsable del PIM, en Imprex"
 stack: [Python, Sales Layer]
-resultado: "Nomenclatura, campos del PIM, protocolo de vídeo y analizador de nombres hechos y probados; la carga automática no llegó a producción"
+resultado: "La nomenclatura se usó en interno: cada archivo entraba solo en su campo del PIM y los catálogos de InDesign lo sacaban por el conector"
 enlace: https://github.com/acamposla/dam-por-nombre
 enlace_texto: "El método reescrito sobre un catálogo sintético, en GitHub"
 portada: /assets/img/previews/dam.webp
@@ -34,8 +34,8 @@ ambiente) que nadie iba a renombrar.
 
 **El nombre del archivo como dato.** Todo archivo sigue la fórmula `IDENTIFICADOR_CÓDIGO_SERIE`:
 `ORION_VSET_01.mp4` es el primer vídeo de puesta en marcha del modelo Orion. Quien produce el
-archivo solo tiene que nombrarlo bien. Lo demás lo hace un script que lee el nombre y coloca el
-archivo.
+archivo solo tiene que nombrarlo bien. El nombre basta para colocar el archivo, sin que nadie abra
+la ficha.
 
 ![El nombre ORION_VSET_01.mp4 descompuesto en identificador, código y serie](/assets/img/dam/es/anatomia.webp)
 
@@ -78,8 +78,8 @@ Quedaron hechos:
 - el protocolo de vídeo con sus guiones;
 - el analizador de nombres, con 26 pruebas.
 
-Faltaba la conexión con la API de Sales Layer, que es la que sube el archivo. Quedó pendiente de
-credenciales y documentación, y el sistema no llegó a producción antes de que yo saliera de Imprex.
+La fórmula se usó en interno. Cada archivo entraba solo en su campo del PIM, y los catálogos de
+InDesign lo sacaban de ahí por el conector, sin que nadie buscara la foto a mano.
 
 He reescrito el método sobre un catálogo inventado de ocho modelos, sus variantes y cinco temas. Le
 he pasado una entrega de agencia sintética con los errores de siempre: series de un dígito, códigos

@@ -1,7 +1,23 @@
-# Estado de la conversacion
+# Contexto de conversación
 
-Ultima sesion: 2026-09-25. Estado volatil: el criterio estable vive en
-`CLAUDE.md`, no aqui.
+Última actualización: 2026-11-09, Alejandro
+
+## Web bilingüe y piezas del portfolio
+**Último en tocarlo:** Alejandro, 2026-11-09 · **Estado:** abierto
+- Dónde quedó: web ES/EN en marcha con seis piezas publicadas en ambos idiomas
+  (detalle técnico en `CLAUDE.md`, sección bilingüe). Portada con destacados por
+  `orden`. Hechas unas 30 correcciones de ortografía, inglés y coherencia entre idiomas.
+  Último commit: `8d80425`.
+- Problemas abiertos: Alejandro debe contestar la lista de afirmaciones a confirmar
+  (`revision/afirmaciones-2026-11-09.md` en el repo portfolio). Según responda puede
+  haber que tocar piezas, "Sobre mí" ("doce años" contra cuatro más siete) y la marca de Edgewell.
+  Orden de destacados sin confirmar.
+- Próximo paso: leer sus respuestas a esa lista y aplicar los cambios; luego confirmar el orden de la portada.
+
+## Contexto anterior (2026-09-25, sin clasificar)
+**Último en tocarlo:** sesión del 2026-09-25 · **Estado:** parcialmente superado
+- El punto 1 de "Lo siguiente" (primera ficha real) ya está hecho: hay seis piezas.
+  Los puntos 2 a 4 siguen vigentes salvo que se haya hecho fuera de este repo.
 
 ## Donde quedo
 

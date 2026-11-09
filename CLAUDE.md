@@ -12,6 +12,7 @@ developer con portfolio activo).
 - `_posts/` → blog, cronológico, `/blog/:year/:title/`.
 - `_proyectos/` → colección de portfolio, atemporal, `/portfolio/:name/`, con
   ficha técnica (cliente, rol, stack, resultado) y agrupada por `disciplina`.
+  Las piezas en inglés viven en `_proyectos/en/` (`/en/portfolio/:name/`).
 
 El portfolio se ordena por **disciplina en orden narrativo** (Datos → Marca →
 Dirección de arte), declarado a mano en `portfolio.html`. No es cosmético: según
@@ -126,11 +127,37 @@ libreria estandar; solo afectan al local.
 - Cada entrada nueva lleva `image` (PNG o JPG 1200x630, es el og:image que lee
   LinkedIn, que no lee bien WebP) y `miniatura` (WebP ligero para el listado).
   Campos documentados en el README; se generan con `scripts/previews/`.
-- `/portfolio/` tiene dos estados: "En preparacion" mientras `_proyectos/` este
-  vacio, rejilla por disciplina desde la primera ficha. Las piezas anunciadas
-  viven en `_data/portfolio_proximamente.yml`.
+- `/portfolio/` muestra "En preparacion" solo mientras `_proyectos/` este vacio
+  (ya no: hay seis piezas). Las anunciadas viven en `_data/portfolio_proximamente.yml`.
 - Las cifras del sitio siguen a LinkedIn: lo que ya esta publicado alli (9.300
   referencias, 8 a 12 M€, 10 %) puede ir aqui; lo que no, no.
+
+## Web bilingüe ES/EN (2026-11-09)
+
+- **Emparejado:** cada pieza en inglés (`_proyectos/en/`) se empareja con la
+  española por el campo `ref`; de ahí salen hreflang y el selector ES/EN.
+- **Textos fijos de la interfaz:** `_data/i18n.yml`. No hardcodear en layouts.
+- `_layouts/portfolio.html` agrupa por disciplina y filtra por idioma.
+- **Portada (es y en):** muestra las piezas con `destacado: true`, ordenadas por
+  `orden` (1 SAP→PIM, 2 RAG, 3 promociones B2B, 4 cierre de año). Orden pendiente
+  de que Alejandro lo confirme.
+- **Imágenes ampliables:** `_layouts/proyecto.html` envuelve cada imagen de
+  `.prosa` en `a.ampliar` a su archivo (los gráficos no se leen en móvil).
+  `.miniatura` usa aspect-ratio 40/21 (previews 1200x630) para no recortar.
+- **Piezas publicadas (6, en los dos idiomas):** promociones B2B, RAG, SAP→PIM,
+  cierre de año (informe en `assets/docs/informe-cierre.html`), cámaras, DAM
+  (disciplina Marca).
+- "Doce años" en la portada (`_config.yml` description, `en/index.html`) y en la
+  entradilla del portfolio; "Sobre mí" y about enlazan los cinco casos de Imprex.
+- **Si la build de Pages se atasca:** `gh api -X POST repos/acamposla/acamposla.github.io/pages/builds`.
+- **Compilar en local sin ensuciar el repo:**
+  `BUNDLE_GEMFILE=<repo>/Gemfile bundle exec jekyll build -s <repo> -d <scratch>` (con Ruby 3.1 en el PATH).
+
+## Próximos pasos
+
+- [ ] Alejandro contesta `revision/afirmaciones-2026-11-09.md` (repo portfolio) y
+  se ajustan piezas y "Sobre mí" ("doce años" frente a cuatro más siete; marca de Edgewell).
+- [ ] Confirmar el orden de los destacados de la portada.
 
 ## Restricciones técnicas
 

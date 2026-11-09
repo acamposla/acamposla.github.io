@@ -10,6 +10,7 @@ enlace: https://github.com/acamposla/promociones-b2b
 enlace_texto: "El código, con datos sintéticos, en GitHub"
 portada: /assets/img/previews/promociones-b2b.webp
 portada_en_ficha: false
+ref: promociones-b2b
 image:
   path: /assets/img/previews/promociones-b2b.png
   width: 1200
@@ -93,7 +94,7 @@ parte de cada grupo. Así se mide cuánto crece de verdad quien acepta y cuánto
 descuento se lleva quien habría comprado igual. No llegué a lanzarlo. Sirve
 para la cartera de cualquier distribuidor B2B que facture por cliente.
 
-## Qué decidí y qué me costó
+## Qué decidí
 
 La estadística pedía dos o tres grupos. Con dos, el cliente que deja buen
 margen y el que deja poco caían juntos, y necesitan ofertas opuestas: al

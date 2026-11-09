@@ -1,0 +1,62 @@
+---
+layout: default
+---
+{%- comment -%}
+Rejilla del portfolio en el idioma de la página (portfolio.html en español,
+en/portfolio.html en inglés). Solo entran las fichas de ese idioma. El orden de
+las disciplinas se declara en _data/i18n.yml, no se deduce: manda la narrativa
+(Datos, Marca, Dirección de arte), no el alfabeto. Debajo, las piezas en
+preparación de _data/portfolio_proximamente.yml; en inglés solo las que tienen
+titulo_en. Al publicar una pieza anunciada, quitarla del .yml.
+{%- endcomment -%}
+{%- assign lang = page.lang | default: site.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign disciplinas = t.disciplinas | split: "," -%}
+{%- assign ordenados = site.proyectos | where: "lang", lang | sort: "anyo" | reverse -%}
+<section class="pagina">
+  <h1>{{ page.title }}</h1>
+  <p class="entradilla">{{ page.entradilla }}</p>
+</section>
+
+{%- for disciplina in disciplinas %}
+{%- assign delgrupo = ordenados | where: "disciplina", disciplina %}
+{%- if delgrupo.size > 0 %}
+<section class="listado">
+  <h2 class="titulo-seccion">{{ disciplina }}</h2>
+  <ul class="rejilla">
+    {%- for p in delgrupo %}
+    <li class="tarjeta">
+      <a href="{{ p.url | relative_url }}">
+        {%- if p.portada %}
+        <img class="miniatura" src="{{ p.portada | relative_url }}" alt="" loading="lazy">
+        {%- endif %}
+        <p class="meta">{{ p.anyo }}</p>
+        <h3>{{ p.title }}</h3>
+        <p class="extracto">{{ p.resumen }}</p>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif %}
+{%- endfor %}
+
+{%- if lang == "en" %}
+{%- assign proximas = site.data.portfolio_proximamente | where_exp: "p", "p.titulo_en" -%}
+{%- else %}
+{%- assign proximas = site.data.portfolio_proximamente -%}
+{%- endif %}
+{%- if proximas.size > 0 %}
+<section class="listado">
+  <h2 class="titulo-seccion">{{ t.en_preparacion }}</h2>
+  <ol class="proximamente">
+    {%- for pieza in proximas %}
+    <li>
+      <p class="meta">{% if lang == "en" %}{{ pieza.disciplinas_en }}{% else %}{{ pieza.disciplinas }}{% endif %}</p>
+      <h3>{% if lang == "en" %}{{ pieza.titulo_en }}{% else %}{{ pieza.titulo }}{% endif %}</h3>
+      <p class="extracto">{% if lang == "en" %}{{ pieza.resumen_en }}{% else %}{{ pieza.resumen }}{% endif %}</p>
+    </li>
+    {%- endfor %}
+  </ol>
+</section>
+{%- endif %}

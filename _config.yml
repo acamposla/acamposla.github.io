@@ -49,7 +49,22 @@ collections:
     output: true
     permalink: /portfolio/:name/
 
+# Idioma por página: es en todo; en bajo /en/ y _proyectos/en/ (2026-11-09).
 defaults:
+  - scope:
+      path: ""
+    values:
+      lang: es
+  - scope:
+      path: "en"
+    values:
+      lang: en
+  - scope:
+      path: "_proyectos/en"
+      type: proyectos
+    values:
+      lang: en
+      permalink: /en/portfolio/:name/
   - scope:
       path: ""
       type: posts

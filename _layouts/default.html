@@ -1,5 +1,22 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: 'es' }}">
+{%- comment -%}
+Bilingüe desde el 2026-11-09. El idioma sale de page.lang (defaults de
+_config.yml: es en todo, en bajo /en/ y _proyectos/en/). Dos páginas que son
+traducción una de otra comparten el mismo `ref`; si una página no tiene
+traducción, el selector lleva a la portada del otro idioma.
+{%- endcomment -%}
+{%- assign lang = page.lang | default: site.lang -%}
+{%- if lang == "en" %}{% assign otro = "es" %}{% else %}{% assign otro = "en" %}{% endif -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign t_otro = site.data.i18n[otro] -%}
+{%- assign url_otro = t_otro.inicio -%}
+{%- assign hay_traduccion = false -%}
+{%- if page.ref -%}
+  {%- assign todas = site.pages | concat: site.proyectos -%}
+  {%- assign traduccion = todas | where: "ref", page.ref | where: "lang", otro | first -%}
+  {%- if traduccion %}{% assign url_otro = traduccion.url %}{% assign hay_traduccion = true %}{% endif -%}
+{%- endif %}
+<html lang="{{ lang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,18 +29,23 @@
   lanzar de verdad.
   {%- endcomment -%}
   {%- if site.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+  {%- if hay_traduccion %}
+  <link rel="alternate" hreflang="{{ lang }}" href="{{ page.url | absolute_url }}">
+  <link rel="alternate" hreflang="{{ otro }}" href="{{ url_otro | absolute_url }}">
+  {%- endif %}
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
 </head>
 <body>
-  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <a class="saltar" href="#contenido">{{ t.saltar }}</a>
 
   <header class="cabecera">
-    <a class="marca" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <a class="marca" href="{{ t.inicio | relative_url }}">{{ site.title }}</a>
     <nav class="nav">
-      <a href="{{ '/portfolio/' | relative_url }}">Portfolio</a>
-      <a href="{{ '/blog/' | relative_url }}">Blog</a>
-      <a href="{{ '/sobre-mi/' | relative_url }}">Sobre mí</a>
+      <a href="{{ t.portfolio | relative_url }}">{{ t.nav_portfolio }}</a>
+      <a href="{{ '/blog/' | relative_url }}">{{ t.nav_blog }}</a>
+      <a href="{{ t.sobre_mi | relative_url }}">{{ t.nav_sobre_mi }}</a>
+      <a class="idioma" href="{{ url_otro | relative_url }}" hreflang="{{ otro }}" lang="{{ otro }}" title="{{ t.otro_idioma }}">{{ t.otro_idioma_corto }}</a>
     </nav>
   </header>
 

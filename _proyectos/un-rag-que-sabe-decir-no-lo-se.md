@@ -12,7 +12,8 @@ image:
   path: /assets/img/previews/rag-no-lo-se.png
   width: 1200
   height: 630
-  alt: "Pregunta trampa del banco de pruebas: cuántos empleados tiene la oficina de Berlín, que no existe"
+  alt: "Mediciones del banco de pruebas: 11 de 12 en la puesta en marcha, 2 de 12 tras reiniciar el contenedor y 10 de 12 en agosto"
+ref: rag-no-lo-se
 ---
 
 ## El problema
@@ -31,7 +32,7 @@ respuesta, la redacta igual, con la misma seguridad que cuando la encuentra. Y
 un cambio de configuración puede romperlo sin que nadie lo note, porque sigue
 contestando.
 
-## Qué hice
+## La solución
 
 Antes de abrírselo al equipo escribí doce preguntas con su respuesta conocida.
 Diez tienen la respuesta en los documentos: un umbral de gasto, un dominio, un
@@ -49,7 +50,30 @@ contra un patrón: que aparezca el dato esperado o, en las dos trampa, una
 negativa ("no dispongo", "no consta", "no se indica"). Lo paso después de cada
 cambio de configuración y cada vez que el corpus crece.
 
-## Qué encontró
+Puntúo con un patrón y no con otro modelo que juzgue las respuestas: es gratis,
+da siempre el mismo resultado y cualquiera puede leer por qué una respuesta
+cuenta como fallo. El precio es que una respuesta correcta dicha de otra forma
+también cuenta como fallo. Doce preguntas no miden la calidad media del chat;
+sirven para detectar que algo se ha roto.
+
+La biblioteca del chat se actualiza con una sincronización que la deja igual
+que las fuentes: sube lo nuevo, reemplaza lo cambiado y quita lo que ya no
+existe, para que un documento archivado no siga contestando como vigente. Un
+día, una carpeta mal leída hizo que la sincronización quitara 12 documentos sin
+avisar. Desde entonces se para si va a quitar más de tres. Es un número fijo y
+no un porcentaje porque aquellos 12 eran menos del 10 % de la biblioteca.
+
+Los documentos de clientes no entran. La búsqueda corre en nuestro propio
+servidor, pero la redacción la hace un modelo externo, y con datos de terceros
+eso no vale.
+
+## Resultado
+
+![El chat contesta que no tiene el dato de la oficina de Berlín y da el dominio de la agencia citando el documento](/assets/img/rag/consulta-gpt-oss.webp)
+
+*Consulta de prueba del 9 de noviembre de 2026, con `gpt-oss:20b` en local y
+la colección de documentos adjunta. A la pregunta trampa contesta que no tiene
+el dato; a la otra da la respuesta y cita el documento del que la saca.*
 
 **Un despliegue roto que no daba error.** El día de la puesta en marcha, el chat
 sacaba 11 de 12. Tras reiniciar el contenedor bajó a 2 de 12, sin una sola línea
@@ -75,37 +99,6 @@ volver a pasar el banco para confirmar que esa pregunta ya acierta.
 La última medición es del 19 de agosto, con `gpt-oss:20b`: 10 de 12, con las dos
 trampa acertadas. Desde octubre el chat del equipo redacta con otro modelo, y
 con ese todavía no lo he medido. Es lo siguiente que toca.
-
-## Qué decidí y qué me costó
-
-**Puntuar con un patrón y no con otro modelo.** Un modelo que juzgue las
-respuestas entiende paráfrasis; un patrón no. A cambio, el patrón es gratis,
-da siempre el mismo resultado y se puede leer. El precio es que una respuesta
-correcta dicha de otra forma cuenta como fallo, y que la lista de maneras de
-decir "no lo sé" hay que mantenerla a mano.
-
-**Doce preguntas.** Detectan que algo se ha roto, que es para lo que las quería.
-No miden la calidad media del chat, y no lo pretendo.
-
-**Dejar fuera los documentos de clientes.** La búsqueda y los embeddings corren
-en nuestro propio servidor, pero la redacción la hace un modelo externo. Con
-datos de terceros eso no vale, así que el material de clientes no entra hasta
-que la redacción también corra en casa. El chat es menos útil de lo que podría
-ser.
-
-**Que la sincronización borre.** Cada actualización copia las fuentes y deja la
-biblioteca del chat igual que la copia: sube lo nuevo, reemplaza lo cambiado y
-quita lo que ya no existe. Sin ese borrado, un documento renombrado o archivado
-seguiría contestando como vigente. Un día, una carpeta mal leída hizo que la
-copia saliera con 1 documento en lugar de 14 y la sincronización quitó 12 del
-chat sin avisar. Ahora se para si va a quitar más de tres. El umbral es un
-número fijo y no un porcentaje porque aquellos 12 eran menos del 10 % de la
-biblioteca: un umbral porcentual no los habría parado.
-
-## Qué me llevo
-
-Un asistente que contesta con seguridad necesita preguntas cuya única respuesta
-correcta es "no lo sé", y alguien que las pase después de cada cambio.
 
 <details markdown="1">
 <summary>Cómo está montado, para quien quiera el detalle técnico</summary>

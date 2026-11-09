@@ -1,12 +1,13 @@
 ---
 layout: default
+ref: inicio
 ---
 <section class="portada">
   <h1>{{ site.author.name }}</h1>
   <p class="entradilla">{{ site.description }}</p>
 </section>
 
-{%- assign destacados = site.proyectos | where: "destacado", true | sort: "anyo" | reverse -%}
+{%- assign destacados = site.proyectos | where: "lang", "es" | where: "destacado", true | sort: "anyo" | reverse -%}
 {%- if destacados.size > 0 %}
 <section class="listado">
   <h2 class="titulo-seccion">Trabajo seleccionado</h2>

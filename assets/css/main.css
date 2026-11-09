@@ -80,6 +80,8 @@ a:hover { color: var(--acento); }
 }
 .nav a { color: var(--tinta-suave); text-decoration: none; }
 .nav a:hover { color: var(--acento); }
+/* Selector de idioma: separado del resto de la navegación por una línea. */
+.nav .idioma { padding-left: 1.25rem; border-left: 1px solid var(--linea); letter-spacing: 0.04em; }
 
 .saltar {
   position: absolute;

@@ -1,6 +1,7 @@
 ---
 title: Sobre mí
 permalink: /sobre-mi/
+ref: sobre-mi
 ---
 
 Llevo doce años con la misma pregunta: por qué la gente compra lo que compra.

@@ -36,7 +36,7 @@ both languages.
 
 **[2019 - 2026] Imprex Europe, consumer goods distribution**
 
-- [2020 - 2026] Head of [Garza](https://garza.es/), Imprex's own lighting, connectivity and IoT brand, in Spain and Portugal. Margin, pricing, assortment and launches; revenue from €8M to €12M, with a team of 11 and eight direct reports. I opened the solar lighting category and rolled out the PIM, Power BI, Freshdesk and Shopify from the business side. The B2B promotions case is in the [portfolio](/portfolio/el-grupo-que-mas-compra/) (in Spanish, with [slides in English](/assets/docs/b2b-promotions-case.pdf)).
+- [2020 - 2026] Head of [Garza](https://garza.es/), Imprex's own lighting, connectivity and IoT brand, in Spain and Portugal. Margin, pricing, assortment and launches; revenue from €8M to €12M, with a team of 11 and eight direct reports. I opened the solar lighting category and rolled out the PIM, Power BI, Freshdesk and Shopify from the business side. The B2B promotions case is in the [portfolio](/en/portfolio/the-segment-that-buys-the-most/).
 - [2019 - 2020] Amazon and e-commerce for Edgewell, whose brands Imprex distributed. I launched the direct Amazon sales channel (3P) for the brand in Spain and Europe.
 
 **[2014 - 2018] Art direction at agencies, London and Madrid**

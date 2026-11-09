@@ -1,6 +1,6 @@
 ---
-title: "How many units to order of a product that isn't on sale yet"
-resumen: "To launch a range of WiFi cameras, we had to decide how many of each model to order without a single sale of our own. I estimated demand per segment from a retail panel and a marketplace, and cleaned a survey that brought in more junk than answers. Rebuilt on synthetic data, with the code."
+title: "How many units to order of a product nobody has sold yet"
+resumen: "To launch a range of Wi-Fi cameras, we had to decide how many of each model to order without a single sale of our own. I estimated demand per segment from a retail panel and a marketplace, and cleaned a survey that brought in more junk than answers. Rebuilt on synthetic data, with the code."
 disciplina: Data
 anyo: 2026
 rol: "Head of Garza, at Imprex"
@@ -20,7 +20,7 @@ image:
 
 ## The problem
 
-In 2026 Garza was preparing a new range of WiFi security cameras, each model aimed at a different
+In 2026 Garza was preparing a new range of Wi-Fi security cameras, each model aimed at a different
 kind of buyer. Before launch, two questions had to be answered that don't allow for "we'll see":
 how many units of each model to order from the supplier, with the months of safety stock set by
 purchasing, and which pack front works better on the shelf.
@@ -38,14 +38,14 @@ marketplace) and the option of asking consumers.
 2. Since the panel doesn't cover every store, offline sales are scaled up by a coverage factor.
    It's the weakest assumption, so it sits in plain sight as a parameter rather than hidden in a
    formula.
-3. From the marketplace, the same aisle and price band. There are no technical attributes there,
+3. From the marketplace, the same category and price band. There are no technical attributes there,
    so it can't be refined any further.
 4. Three share scenarios on the segment's market (conservative, base and optimistic), instead of a
    single number that hides the uncertainty. Two of our models in the same segment split the
    share; otherwise the brand counts the same market twice.
 5. The order: the scenario's monthly sales times the months of safety stock.
 6. A check: base-scenario sales against the reference competitor's on the marketplace. If a model
-   needs to sell more than half of what its segment's leader sells, it gets reviewed by hand.
+   needs to sell more than half of what that competitor sells, it gets reviewed by hand.
 
 **The consumer, with a survey that had to be cleaned before counting.** The survey included an
 A/B test of two pack fronts. The online panel was cheap and brought a lot of junk: bots answering
@@ -69,8 +69,8 @@ with their junk.
 
 The check flags two models. In both, the reference competitor sells very little for the size of its
 segment: either it's a niche nobody has taken yet, or the chosen competitor isn't the one that
-leads. In neither case is market share a good guide, and the order is decided with judgement
-rather than the formula.
+leads. In neither case is market share a good guide, and the order is decided by judgement,
+not by the formula.
 
 ![From 270 responses received to 103 valid, by reason for discarding](/assets/img/camaras/en/embudo.webp)
 

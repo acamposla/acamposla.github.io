@@ -13,6 +13,8 @@ image:
   width: 1200
   height: 630
   alt: "Test bank runs: 11 of 12 on launch day, 2 of 12 after a container restart and 10 of 12 in August"
+destacado: true
+orden: 2
 ref: rag-no-lo-se
 ---
 
@@ -23,7 +25,7 @@ spread across code repositories, a Nextcloud drive and a pricing database. To
 find out what we'd decided about a service, or what we charge for a piece of
 work, people had to ask me.
 
-I set up a chat on a language model that searches those documents for the
+I set up a chat built on a language model that searches those documents for the
 passages closest to the question before it answers, and cites where each
 answer comes from. That's what RAG means. It now reads around 130 documents.
 
@@ -36,7 +38,7 @@ answering.
 
 Before opening it to the team, I wrote twelve questions with known answers. Ten
 have their answer in the documents: a spending threshold, a domain name, a
-trademark application number. The other two have no answer anywhere, and the
+filing number. The other two have no answer anywhere, and the
 chat has to say it doesn't know:
 
 - How much budget does Vertienza have for the autumn TV campaign?
@@ -69,12 +71,12 @@ written by an external model, and that isn't acceptable for third-party data.
 
 ## Result
 
-![The chat says it has no data on the Berlin office, and gives the agency's domain citing the source document](/assets/img/rag/consulta-gpt-oss.webp)
+![The chat says it has no data on the Berlin office, and gives the studio's domain citing the source document](/assets/img/rag/consulta-gpt-oss.webp)
 
 *A test query on 9 November 2026, with `gpt-oss:20b` running locally and the
 document collection attached. The interface and questions are in Spanish: asked
 how many people work at the Berlin office, it says the information doesn't
-contain that figure; asked for the agency's new web domain, it answers
+contain that figure; asked for the studio's new web domain, it answers
 `vertienza.com` and cites the document it comes from.*
 
 **A broken deployment that raised no errors.** On launch day the chat scored 11
@@ -87,7 +89,7 @@ Without the test bank, the team would have started on a broken assistant.
 **Two failures that looked like one.** In August, after the corpus grew, the
 score fell to 10 of 12. The obvious suspect was the new documents, so I tested
 that: I took them out, ran the bank again, and both failures were still there.
-One was about content: the fact only appeared inside a bracket in an index, and
+One was about content: the fact only appeared in brackets in an index, and
 the service document itself never said it. The other was about format: the
 price being asked for lived in a spreadsheet, and the chat doesn't read
 spreadsheets.

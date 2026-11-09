@@ -62,7 +62,7 @@ sola pregunta: cómo pongo esto en marcha.
   - una bombilla inteligente necesita la conexión y la configuración;
   - una cámara IP necesita las tres.
 
-  En la configuración va primero lo esencial, sin lo que el producto no funciona, y después lo
+  En la configuración va primero lo esencial, sin lo cual el producto no funciona, y después lo
   avanzado.
 - **VTR**, para cuando algo falla: el síntoma, la causa probable y la solución.
 

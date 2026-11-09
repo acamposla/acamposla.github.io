@@ -10,6 +10,8 @@ enlace: https://github.com/acamposla/cierre-de-ano
 enlace_texto: "El código y el informe, con datos sintéticos, en GitHub"
 portada: /assets/img/previews/cierre.webp
 portada_en_ficha: false
+destacado: true
+orden: 4
 ref: cierre
 image:
   path: /assets/img/previews/cierre.png

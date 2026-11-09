@@ -10,6 +10,8 @@ enlace: https://github.com/acamposla/catalogo-vivo
 enlace_texto: "The rules rewritten on a synthetic catalogue, on GitHub"
 portada: /assets/img/previews/sap-pim-en.webp
 portada_en_ficha: false
+destacado: true
+orden: 1
 ref: sap-pim
 image:
   path: /assets/img/previews/sap-pim-en.png
@@ -122,7 +124,7 @@ without asking anyone for the data.
 
 What remained was deciding which product goes to which channel. One rule was
 already in production: some channels only want products with stock cover, so a
-product that isn't being replenished only goes in if it has at least three
+product that isn't in the supply plan only goes in if it has at least three
 months of stock at last year's sales rate. Exclusivity by customer or by type
 of store I left specified as a cascade (first the product's rule, otherwise the
 brand's, otherwise the company's), with the rules in a table managed by the
@@ -153,7 +155,7 @@ This experience is the basis of the catalogue service I now offer at
   migration, which moved stock movements to a different table.
 - **Publishing:** a daily export to the PIM over FTP, and deletion through the
   API by comparing the PIM with the list of live products, with a cap, a check
-  against the previous day and dry run by default.
+  against the previous day and a dry run by default.
 - **Orchestration:** a daily script with dependency ordering (calculation, view
   refresh, export) on a company Linux server, with cron.
 - **Tests:** unit tests for the stock-cover calculation.

@@ -10,6 +10,8 @@ enlace: https://github.com/acamposla/promociones-b2b
 enlace_texto: "El código, con datos sintéticos, en GitHub"
 portada: /assets/img/previews/promociones-b2b.webp
 portada_en_ficha: false
+destacado: true
+orden: 3
 ref: promociones-b2b
 image:
   path: /assets/img/previews/promociones-b2b.png
@@ -44,12 +46,12 @@ cuatro grupos, y cada uno pide una oferta distinta:
 Por qué cuatro y no otro número lo cuento más abajo.
 
 Después calculé el techo de descuento de cada grupo, que es el margen que
-deja, pesado por lo que compra cada cliente. Una promoción que pase de ese
+deja, ponderado por lo que compra cada cliente. Una promoción que pase de ese
 porcentaje pierde dinero en ese grupo, la acepte quien la acepte.
 
 Para que ventas pudiera usarlo, traduje los grupos a reglas de una frase,
 del tipo "si compra más de X y deja más de Y de margen, es Premium". Un
-comercial las aplica al teléfono, sin abrir ninguna herramienta.
+comercial las aplica por teléfono, sin abrir ninguna herramienta.
 
 Y cambié la forma de la oferta. En lugar de un descuento igual para todos,
 un rappel: "si me compras un tanto más de lo que ya me compras, te descuento
@@ -129,7 +131,7 @@ diapositivas, cifras sintéticas; también [en inglés](/assets/docs/b2b-promoti
   frecuencia, ticket medio, margen relativo, número de categorías y tendencia
   frente al año anterior), con transformación logarítmica de las variables de
   escala y RobustScaler. Probé de 2 a 10 grupos. La silueta favorecía dos y
-  Calinski-Harabász tres, sin un codo claro en la inercia. Elegí k=4 por
+  Calinski-Harabasz tres, sin un codo claro en la inercia. Elegí k=4 por
   criterio comercial.
 - **Reglas:** árbol de decisión de profundidad 3 entrenado sobre las etiquetas
   de K-Means. Reproduce el grupo en el 87 % de los clientes del caso real (en

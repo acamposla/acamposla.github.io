@@ -10,6 +10,8 @@ enlace: https://github.com/acamposla/catalogo-vivo
 enlace_texto: "Las reglas reescritas sobre un catálogo sintético, en GitHub"
 portada: /assets/img/previews/sap-pim.webp
 portada_en_ficha: false
+destacado: true
+orden: 1
 ref: sap-pim
 image:
   path: /assets/img/previews/sap-pim.png
@@ -33,8 +35,8 @@ fuera: productos agotados que seguían en el catálogo, productos nuevos que
 tardaban semanas en aparecer, y miles de fichas en el PIM de productos que SAP
 ya daba por retirados.
 
-Quien más lo sufría era ventas, que vendía con ese catálogo, y marketing, que
-lo mantenía.
+Quienes más lo sufrían eran ventas, que vendía con ese catálogo, y marketing,
+que lo mantenía.
 
 El problema técnico era el menor. Lo difícil era que las reglas no estaban
 escritas en ningún sitio: qué cuenta como un producto vendible, qué hacer con
@@ -50,7 +52,7 @@ barras y que no sea una pieza suelta de un expositor. Algunas de esas reglas
 las tuve que confirmar con IT campo a campo, porque el nombre de un campo de
 SAP no siempre significa lo que parece.
 
-**Después, un embudo de capas que corre solo.** De los unos 9.300 materiales de
+**Después, un embudo de capas que corre solo.** De los cerca de 9.300 materiales de
 SAP que entran en el ámbito, el proceso decide cada noche:
 
 1. **Catalogable:** si el producto es relevante para algún catálogo, solo con

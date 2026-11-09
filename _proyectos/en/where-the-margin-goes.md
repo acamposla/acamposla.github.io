@@ -10,6 +10,8 @@ enlace: https://github.com/acamposla/cierre-de-ano
 enlace_texto: "The code and the report, with synthetic data, on GitHub"
 portada: /assets/img/previews/cierre-en.webp
 portada_en_ficha: false
+destacado: true
+orden: 4
 ref: cierre
 image:
   path: /assets/img/previews/cierre-en.png
@@ -31,7 +33,7 @@ symptom.
 
 ## The solution
 
-A Quarto report in R, built to be read in a meeting rather than looked things up in:
+A Quarto report in R, built to be read in a meeting not consulted as a reference:
 
 - **Story first, audit later.** Each section is a business question with a chart under it. Tables
   go to the end, in appendices, linked from a button under each chart. They never interrupt the
@@ -43,7 +45,7 @@ A Quarto report in R, built to be read in a meeting rather than looked things up
   for each family's size and health without axes; a dumbbell for margin year on year; small
   multiples to see the same family in each channel.
 - **Anything under €1,000 isn't plotted.** A residual family tells leadership nothing and takes
-  space from what matters. The appendix says how much was left out.
+  space away from what matters. The appendix says how much was left out.
 - **It prints in landscape without losing colour**, because some committees still read on paper.
 
 ## Result

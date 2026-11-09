@@ -4,11 +4,11 @@ title: Alejandro Campos Lamas
 permalink: /en/
 ref: inicio
 description: >-
-  Ten years asking why people buy what they buy, first in advertising and then
+  Twelve years asking why people buy what they buy, first in advertising and then
   running a consumer goods brand. Here I write from the process: insight, brand,
   data and applied AI.
 ---
-{%- assign piezas = site.proyectos | where: "lang", "en" | sort: "anyo" | reverse -%}
+{%- assign piezas = site.proyectos | where: "lang", "en" | where: "destacado", true | sort: "orden" -%}
 <section class="portada">
   <h1>{{ site.author.name }}</h1>
   <p class="entradilla">{{ page.description }}</p>

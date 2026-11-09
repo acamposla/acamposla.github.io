@@ -1,6 +1,6 @@
 ---
 title: "Un RAG que sabe decir \"no lo sé\""
-resumen: "Monté un asistente de IA sobre los documentos internos de Vertienza y un banco de doce preguntas que lo mide en cada cambio. Dos de esas preguntas no tienen respuesta, y la única correcta es no lo sé."
+resumen: "Monté un asistente de IA sobre los documentos internos de Vertienza y un banco de doce preguntas que lo mide en cada cambio. Dos de esas preguntas no tienen respuesta, y la única correcta es \"no lo sé\"."
 disciplina: Datos
 anyo: 2026
 rol: "Diseño, despliegue y mantenimiento, en Vertienza"
@@ -13,6 +13,8 @@ image:
   width: 1200
   height: 630
   alt: "Mediciones del banco de pruebas: 11 de 12 en la puesta en marcha, 2 de 12 tras reiniciar el contenedor y 10 de 12 en agosto"
+destacado: true
+orden: 2
 ref: rag-no-lo-se
 ---
 
@@ -46,7 +48,7 @@ No hay campaña de televisión ni oficina en Berlín. Un modelo que contesta "un
 quince empleados" está inventando, y esas dos preguntas lo detectan.
 
 Un script lanza las doce contra el chat por su API y comprueba cada respuesta
-contra un patrón: que aparezca el dato esperado o, en las dos trampa, una
+contra un patrón: que aparezca el dato esperado o, en las dos preguntas trampa, una
 negativa ("no dispongo", "no consta", "no se indica"). Lo paso después de cada
 cambio de configuración y cada vez que el corpus crece.
 
@@ -69,7 +71,7 @@ eso no vale.
 
 ## Resultado
 
-![El chat contesta que no tiene el dato de la oficina de Berlín y da el dominio de la agencia citando el documento](/assets/img/rag/consulta-gpt-oss.webp)
+![El chat contesta que no tiene el dato de la oficina de Berlín y da el dominio del estudio citando el documento](/assets/img/rag/consulta-gpt-oss.webp)
 
 *Consulta de prueba del 9 de noviembre de 2026, con `gpt-oss:20b` en local y
 la colección de documentos adjunta. A la pregunta trampa contesta que no tiene

@@ -15,7 +15,7 @@ image:
   path: /assets/img/previews/dam-en.png
   width: 1200
   height: 630
-  alt: "The name ORION_VSET_01.mp4 split into identifier, code and series, with what each part tells"
+  alt: "The name ORION_VSET_01.mp4 split into identifier, code and series, with what each part says"
 ---
 
 ## The problem
@@ -40,7 +40,7 @@ record.
 
 - **Three tables in the PIM.** The model; the variant, which is each sellable reference (colour,
   pack size); and a new table of marketing themes, for things that have photos and videos without
-  being a product, such as the solar range or wifi connectivity. Each table has a fixed field per
+  being a product, such as the solar range or Wi-Fi connectivity. Each table has a fixed field per
   code.
 - **A closed dictionary of codes.**
   - Nine are for images: packshot, box, product with box, horizontal and vertical hero, lifestyle,
@@ -105,7 +105,7 @@ the rewrite I changed two things from the original:
 - **Formula and codes:** the code dictionary, the fields per table and the legacy translation live
   in a single configuration file. Adding a code doesn't touch the logic.
 - **Reading:** each name comes out as an asset (identifier, code, series, image or video) or as a
-  rejection with its reason. There are seven reading reasons:
+  rejection with its reason. There are seven reasons a name can be rejected when it's read:
   - doesn't follow the formula;
   - unknown code;
   - series without two digits;

@@ -28,6 +28,18 @@ layout: default
   <div class="prosa">
     {{ content }}
   </div>
+  <script>
+    // Cada imagen suelta de la pieza enlaza a su archivo, para verla a tamano completo
+    document.querySelectorAll(".proyecto .prosa img").forEach(function (img) {
+      if (img.closest("a")) return;
+      var a = document.createElement("a");
+      a.href = img.getAttribute("src");
+      a.className = "ampliar";
+      a.setAttribute("aria-label", img.alt);
+      img.parentNode.insertBefore(a, img);
+      a.appendChild(img);
+    });
+  </script>
 
   {%- if page.enlace %}
   <p class="enlace-externo"><a href="{{ page.enlace }}">{{ page.enlace_texto | default: t.ver_proyecto }}</a></p>

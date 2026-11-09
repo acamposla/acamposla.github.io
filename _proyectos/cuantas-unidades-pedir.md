@@ -1,6 +1,6 @@
 ---
 title: "Cuántas unidades pedir de un producto que aún no se vende"
-resumen: "Para lanzar una gama de cámaras WiFi había que decidir cuántas pedir de cada modelo sin una sola venta propia. Estimé la demanda por segmento con un panel de tiendas y un marketplace, y limpié una encuesta que traía más basura que respuestas. Rehecho sobre datos sintéticos, con el código."
+resumen: "Para lanzar una gama de cámaras wifi había que decidir cuántas pedir de cada modelo sin una sola venta propia. Estimé la demanda por segmento con un panel de tiendas y un marketplace, y limpié una encuesta que traía más basura que respuestas. Rehecho sobre datos sintéticos, con el código."
 disciplina: Datos
 anyo: 2026
 rol: "Al frente de Garza, en Imprex"
@@ -20,7 +20,7 @@ image:
 
 ## El problema
 
-En 2026 Garza preparaba una gama nueva de cámaras de vigilancia WiFi, cada modelo pensado para un
+En 2026 Garza preparaba una gama nueva de cámaras de vigilancia wifi, cada modelo pensado para un
 tipo de comprador. Antes de lanzarla había que contestar dos preguntas que no admiten "ya
 veremos": cuántas unidades pedir de cada modelo al proveedor, con los meses de stock de seguridad
 que fija compras, y qué frente de caja funciona mejor en el lineal.
@@ -44,8 +44,8 @@ posibilidad de preguntar a consumidores.
    la cuota; si no, la marca se cuenta dos veces el mismo mercado.
 5. El pedido: ventas al mes del escenario por los meses de stock de seguridad.
 6. Un contraste: las ventas del escenario base frente a las del competidor de referencia en el
-   marketplace. Si el modelo pide vender más que la mitad que el líder de su segmento, se revisa a
-   mano.
+   marketplace. Si el modelo pide vender más de la mitad de lo que vende ese competidor, se
+   revisa a mano.
 
 **El consumidor, con una encuesta que había que limpiar antes de contar.** La encuesta incluía un
 test A/B de dos frentes de caja. El panel online era barato y trajo mucha basura: bots que

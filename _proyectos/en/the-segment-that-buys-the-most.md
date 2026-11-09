@@ -10,6 +10,8 @@ enlace: https://github.com/acamposla/promociones-b2b
 enlace_texto: "The code, with synthetic data, on GitHub"
 portada: /assets/img/previews/b2b-promotions.webp
 portada_en_ficha: false
+destacado: true
+orden: 3
 ref: promociones-b2b
 image:
   path: /assets/img/previews/b2b-promotions.png
@@ -52,7 +54,7 @@ Premium". A salesperson applies them on the phone without opening any tool.
 
 And I changed the shape of the offer. Instead of the same discount for
 everyone, a rebate: "buy a set amount more than you already buy from me and
-I'll discount only what you grow". The baseline is each customer's own past
+I'll only discount the growth". The baseline is each customer's own past
 purchases, not their segment's average; with a shared threshold, whoever was
 already above it pockets the discount without growing.
 
@@ -127,7 +129,7 @@ paying for the flat discount.
   frequency, average ticket, relative margin, number of categories and trend
   against the previous year), with a log transform on the scale variables and
   RobustScaler. I tried 2 to 10 segments. The silhouette score favoured two and
-  Calinski-Harabász three, with no clear elbow in the inertia. I chose k=4 on
+  Calinski-Harabasz three, with no clear elbow in the inertia. I chose k=4 on
   commercial grounds.
 - **Rules:** a depth-3 decision tree trained on the K-Means labels. It
   reproduces the segment for 87% of customers in the real case (93% on the

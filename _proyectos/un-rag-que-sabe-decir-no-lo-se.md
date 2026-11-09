@@ -93,12 +93,23 @@ preguntaba vivía en una hoja de cálculo, y el chat no lee hojas de cálculo.
 banco. Preguntado por el precio de las imágenes generadas con IA, el chat
 contestó con una cuota mensual que no figuraba en ningún documento. La causa
 era la misma: la tarifa estaba en un Excel. La pasé a la base de datos de
-tarifas, que entra en el corpus convertida en texto, una fila por precio. Falta
-volver a pasar el banco para confirmar que esa pregunta ya acierta.
+tarifas, que entra en el corpus convertida en texto, una fila por precio.
 
-La última medición es del 19 de agosto, con `gpt-oss:20b`: 10 de 12, con las dos
-trampa acertadas. Desde octubre el chat del equipo redacta con otro modelo, y
-con ese todavía no lo he medido. Es lo siguiente que toca.
+**La medición de noviembre.** El 9 de noviembre pasé el banco con los dos
+modelos: el que usa hoy el equipo, Claude Sonnet 5 vía OpenRouter, y
+`gpt-oss:20b` en local. Los dos sacan 10 de 12 y los dos aciertan las dos
+preguntas trampa. El precio de la pregunta de agosto sigue fuera de la
+biblioteca, porque esa tarifa concreta se quedó en la hoja de cálculo; la
+diferencia es que ahora los dos modelos contestan que no tienen el dato en vez
+de inventarlo. El otro fallo de Sonnet 5 es una pregunta de organización
+interna, y el de `gpt-oss` es el mismo fallo de contenido de agosto.
+
+Esa medición enseñó también el límite del patrón. Con Sonnet 5, el script dio
+por buena la pregunta del precio porque la cifra esperada apareció por
+casualidad en una respuesta que decía no tenerla, y dio por fallada una trampa
+porque la llamada volvió vacía. Repetidas a mano, la primera era un fallo y la
+segunda un acierto. El 10 de 12 es el resultado comprobado respuesta a
+respuesta, no el que dio el script.
 
 <details markdown="1">
 <summary>Cómo está montado, para quien quiera el detalle técnico</summary>

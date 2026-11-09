@@ -96,12 +96,23 @@ spreadsheets.
 what we charge for AI-generated images, the chat replied with a monthly fee
 that wasn't in any document. Same cause: the price list was an Excel file. I
 moved it into the pricing database, which now enters the corpus as text, one
-row per price. The bank still needs to be rerun to confirm that question now
-passes.
+row per price.
 
-The last run was on 19 August, with `gpt-oss:20b`: 10 of 12, with both trap
-questions passed. Since October the team's chat has used a different model to
-write its answers, and I haven't measured it with that one yet. That's next.
+**The November run.** On 9 November I ran the bank against both models: the
+one the team uses today, Claude Sonnet 5 through OpenRouter, and `gpt-oss:20b`
+running locally. Both scored 10 of 12 and both passed the two trap questions.
+The price from the August question is still missing from the library, because
+that particular rate stayed behind in the spreadsheet; the difference is that
+both models now say they don't have the figure instead of inventing one.
+Sonnet 5's other miss is a question about internal organisation, and
+`gpt-oss`'s is the same content gap as in August.
+
+That run also showed the limit of pattern scoring. With Sonnet 5, the script
+passed the price question because the expected figure turned up by chance in a
+reply that said it didn't have it, and failed a trap question because the call
+came back empty. Checked by hand, the first was a miss and the second a pass.
+The 10 of 12 is the result checked reply by reply, not the one the script
+printed.
 
 <details markdown="1">
 <summary>How it's built, for anyone who wants the technical detail</summary>
